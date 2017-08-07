@@ -1,6 +1,12 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
-
     <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
     <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
+
+    <body>
+      <h1>No Vehicles In Garage</h1>
+      <!-- <button ng-click="">Add Vehicle</button> -->
+      <a href="#add_vehicle">Add Vehicle</a>
+    </body>
+
 </div>
