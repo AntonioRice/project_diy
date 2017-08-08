@@ -7,7 +7,7 @@ var Vehicle = require('../models/vehicle_schema.js');
 
 
 //retrieve vehicles from database to display to dom
-router.get('/vehicle', function(req, res){
+router.get('/vehicles', function(req, res){
   Vehicle.find({}, function(err, data) {
     if(err) {
       console.log('find error:', err);
@@ -20,7 +20,7 @@ router.get('/vehicle', function(req, res){
 }); //end of get
 
 //ability to add new vehicles
-router.post('/vehicle', function(req, res){
+router.post('/vehicles', function(req, res){
   console.log('log the data: ', req.body);
   var addVehicle = new Vehicle(req.body);
   // insert into the vehicles collection
