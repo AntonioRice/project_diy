@@ -12,6 +12,7 @@ var db = require('./modules/db.config.js');
 var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
+
 var projectRouter = require('./routes/project.router');
 var vehicleRouter = require('./routes/vehicle.router');
 
@@ -34,7 +35,7 @@ app.use(passport.session());
 // Routes
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
-app.use('/vehicles', vehicleRouter);
+app.use('/vehicle', vehicleRouter);
 app.use('/project', projectRouter);
 
 // Catch all bucket, must be last!

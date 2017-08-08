@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
-// var passport = require('passport');
 var Project = require('../models/project_schema.js');
-// var Vehicle = require('../models/vehicle_schema.js');
 
 //retrieve projects upon page-load
 router.get('/project', function(req, res){
@@ -21,7 +18,7 @@ router.get('/project', function(req, res){
 
 router.post('/project', function(req, res){
   console.log('log the data: ', req.body);
-  var addProject = new Poject(req.body);
+  var addProject = new Project(req.body);
   // insert into the project collection
   addProject.save(function(err, data) {
     console.log('saved data:', data);
@@ -37,3 +34,5 @@ router.post('/project', function(req, res){
 //ability to update project
 
 //ability to delete project
+
+module.exports = router;

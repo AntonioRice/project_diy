@@ -1,24 +1,24 @@
-<form ng-submit="">
+<form>
   <div>
-      <label for="vehicle_year">Year: </label>
-      <input type="text" ng-model="" />
+      <label for="vehicle.year">Year: </label>
+      <input type="text" ng-model="vc.newVehicle.year" />
   </div>
   <div>
-      <label for="vehicle_make">Make: </label>
-      <input type="text" ng-model="" />
+      <label for="vehicle.make">Make: </label>
+      <input type="text" ng-model="vc.newVehicle.make" />
   </div>
   <div>
-      <label for="vehicle_model">Model: </label>
-      <input type="text" ng-model="" />
+      <label for="vehicle.model">Model: </label>
+      <input type="text" ng-model="vc.newVehicle.model" />
   </div>
   <div>
-    <label for="vehicle_style">Body Style: </label>
-    <input type="text" ng-model="" />
+    <label for="vehicle.style">Body Style: </label>
+    <input type="text" ng-model="vc.newVehicle.body_style" />
   </div>
   <div>
-      <label for="vehicle_milege">Mileage: </label>
-      <input type="text" ng-model="" />
+      <label for="vehicle.mileage">Mileage: </label>
+      <input type="text" ng-model="vc.newVehicle.mileage" />
   </div>
-      <input class="btn btn-default" type="submit" name="submit" value="Add Vehicle" />
+      <button class="btn btn-primary" ng-click="vc.addVehicle()">Add Vehicle</button>
       <a href="#user">Garage</a>
 </form>

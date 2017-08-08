@@ -1,24 +1,25 @@
-myApp.controller('VehicleController', function($http) {
+myApp.controller('VehicleController', ['$http', function($http) {
   console.log('VehicleController created');
+
   var vc = this;
+  vc.newVehicle = {};
 
 //ability to get vehicle
-function getVehicles(){
-  $http.get('/vehicles').then(function(response){
-    console.log(response.data);
-    vc.vehicles = response.data;
-  });
-}
+  function getVehicle(){
+    $http.get('/vehicle').then(function(response){
+      console.log(response.data);
+      vc.vehicle = response.data;
+    });
+  }
 
 //ability to add vehicle to garage
-vc.addVehicles = function(){
+  vc.addVehicle = function(){
+    $http.post('/vehicle', vc.newVehicle)
+    .then(function(response){
+      console.log('vehicle added', response);
+      getVehicle(); //refresh
+      });
+  }
 
-  $http.post('/vehicles', vc.newVehicle)
-  .then(function(response){
-  console.log('listing added', response);
-  getVehicles(); //refresh
-    });
-}
 
-
-}); //end of controller
+}]); //end of controller
