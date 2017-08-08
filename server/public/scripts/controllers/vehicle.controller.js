@@ -29,4 +29,13 @@ myApp.controller('VehicleController', ['$http', function($http) {
     getVehicle();
     });
   }
+
+  vc.updateVehicle = function(id){
+    
+    $http.put('/vehicle/' + id)
+    .then(function(response){
+    console.log('updated', id);
+    getVehicle();
+    });
+  }
 }]); //end of controller

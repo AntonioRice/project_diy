@@ -3,7 +3,6 @@ var express = require('express');
 var router = express.Router();
 var Vehicle = require('../models/vehicle_schema.js');
 
-
 //retrieve vehicles from database to display to dom
 router.get('/', function(req, res){
   Vehicle.find({}, function(err, data) {
@@ -47,9 +46,26 @@ router.delete('/:id', function(req, res) {
     })
 }); //end of delete
 
-
-
-
+router.put('/:id', function(req, res){
+  console.log('Updated data is: ', req.body);
+  Vehicle.findByIdAndUpdate(
+    {_id: req.params.id},
+    {$set:
+      {year: req.body.year,
+       make: req.body.make,
+       model: req.body.model,
+       body_style: req.body.body_style,
+       mileage: req.body.mileage}
+    },
+    function(err, data){
+      if(err){
+        console.log('update error: ', err);
+      } else {
+        res.sendStatus(200);
+      }
+    }
+  );
+}); // end of PUT Router
 
 
 module.exports = router;
