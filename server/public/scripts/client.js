@@ -21,6 +21,10 @@ myApp.config(function($routeProvider, $locationProvider) {
       templateUrl: '/views/templates/add.project.html',
       controller: 'ProjectController as pc'
     })
+    .when('/garage', {
+      templateUrl: '/views/templates/garage.html',
+      controller: 'VehicleController as vc'
+    })
     .when('/user', {
       templateUrl: '/views/templates/user.html',
       controller: 'UserController as uc',

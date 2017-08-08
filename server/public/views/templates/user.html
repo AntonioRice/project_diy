@@ -2,21 +2,4 @@
 <div class="container">
     <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
     <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
-
-    <body>
-      <h1>No Vehicles In Garage</h1>
-      <div class="row">
-    <div class="col-md-12">
-      <div ng-repeat="item in vc.vehicle" class="well col-md-3">
-        <p>Year: {{item.year}}</p>
-        <p>Make: {{item.make}}</p>
-        <p>Model: {{item.model}}</p>
-        <p>Body Style: {{item.body_style}}</p>
-        <p>Mileage: {{item.mileage}}</p>
-      </div>
-    </div>
-  </div>
-      <a href="#add_vehicle">Add Vehicle</a>
-    </body>
-
 </div>

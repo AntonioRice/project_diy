@@ -33,6 +33,21 @@ router.post('/', function(req, res){
   });
 }); //end of post
 
+router.delete('/:id', function(req, res) {
+  console.log('delete with id: ', req.params.id);
+  Vehicle.findByIdAndRemove(
+    { _id: req.params.id }, // finding the item
+    function(err, data) {
+      if(err) {
+        console.log('remove error: ', err);
+        res.sendStatus(500);
+      } else {
+        res.sendStatus(200);
+      }
+    })
+}); //end of delete
+
+
 
 
 

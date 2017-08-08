@@ -3,6 +3,7 @@ myApp.controller('VehicleController', ['$http', function($http) {
 
   var vc = this;
   vc.newVehicle = {};
+  getVehicle();
 
 //ability to get vehicle
   function getVehicle(){
@@ -21,5 +22,11 @@ myApp.controller('VehicleController', ['$http', function($http) {
       });
   }
 
-
+  vc.deleteVehicle = function(id){
+    $http.delete('/vehicle/' + id)
+    .then(function(response){
+    console.log('vehicle deleted', id);
+    getVehicle();
+    });
+  }
 }]); //end of controller
