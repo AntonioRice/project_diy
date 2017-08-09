@@ -1,41 +1,14 @@
-myApp.controller('VehicleController', ['$http', function($http) {
+myApp.controller('VehicleController', ['$http', 'UserService', function($http, UserService) {
   console.log('VehicleController created');
 
   var vc = this;
-  vc.newVehicle = {};
-  getVehicle();
+  vc.userService = UserService;
 
-//ability to get vehicle
-  function getVehicle(){
-    $http.get('/vehicle').then(function(response){
-      console.log(response.data);
-      vc.vehicle = response.data;
-    });
-  }
+  vc.userPackage = UserService.userPackage;
 
-//ability to add vehicle to garage
-  vc.addVehicle = function(){
-    $http.post('/vehicle', vc.newVehicle)
-    .then(function(response){
-      console.log('vehicle added', response);
-      getVehicle(); //refresh
-      });
-  }
+  // console.log(vc.userService);
+  vc.userService.getVehicle();
 
-  vc.deleteVehicle = function(id){
-    $http.delete('/vehicle/' + id)
-    .then(function(response){
-    console.log('vehicle deleted', id);
-    getVehicle();
-    });
-  }
 
-  vc.updateVehicle = function(id){
-    
-    $http.put('/vehicle/' + id)
-    .then(function(response){
-    console.log('updated', id);
-    getVehicle();
-    });
-  }
+
 }]); //end of controller

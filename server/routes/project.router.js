@@ -3,7 +3,7 @@ var router = express.Router();
 var Project = require('../models/project_schema.js');
 
 //retrieve projects upon page-load
-router.get('/project', function(req, res){
+router.get('/', function(req, res){
   Project.find({}, function(err, data) {
     if(err) {
       console.log('find error:', err);
@@ -16,7 +16,7 @@ router.get('/project', function(req, res){
 }); //end of get
 //ability to add new project to specific vehicle
 
-router.post('/project', function(req, res){
+router.post('/', function(req, res){
   console.log('log the data: ', req.body);
   var addProject = new Project(req.body);
   // insert into the project collection
@@ -34,5 +34,18 @@ router.post('/project', function(req, res){
 //ability to update project
 
 //ability to delete project
+router.delete('/:id', function(req, res) {
+  console.log('delete with id: ', req.params.id);
+  Project.findByIdAndRemove(
+    { _id: req.params.id }, // finding the item
+    function(err, data) {
+      if(err) {
+        console.log('remove error: ', err);
+        res.sendStatus(500);
+      } else {
+        res.sendStatus(200);
+      }
+    })
+}); //end of delete
 
 module.exports = router;

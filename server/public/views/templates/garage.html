@@ -1,7 +1,7 @@
 <body>
   <div class="row">
     <div class="col-md-12">
-      <div ng-repeat="item in vc.vehicle" class="md-card-image">
+      <div ng-repeat="item in vc.userPackage.vehicle" class="md-card-image">
         <md-card>
           <md-card-content>
             <p>Year: {{item.year}}</p>
@@ -9,8 +9,8 @@
             <p>Model: {{item.model}}</p>
             <p>Body Style: {{item.body_style}}</p>
             <p>Mileage: {{item.mileage}}</p>
-            <button  ng-click="vc.deleteVehicle(item._id)">Delete</button>
-            <button  ng-click="vc.updateVehicle(item._id)">Edit</button>
+            <button  ng-click="vc.userService.deleteVehicle(item._id)">Delete</button>
+            <button  ng-click="vc.userService.updateVehicle(item._id)">Edit</button>
             <button  ng-click="">Projects</button>
           </md-card-content>
         </md-card>

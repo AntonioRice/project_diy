@@ -1,24 +1,24 @@
 <form>
-  <div>
+  <md-input-container>
       <label for="vehicle.year">Year: </label>
       <input type="text" ng-model="vc.newVehicle.year" />
-  </div>
-  <div>
+  </md-input-container>
+<md-input-container>
       <label for="vehicle.make">Make: </label>
       <input type="text" ng-model="vc.newVehicle.make" />
-  </div>
-  <div>
+  </md-input-container>
+<md-input-container>
       <label for="vehicle.model">Model: </label>
       <input type="text" ng-model="vc.newVehicle.model" />
-  </div>
-  <div>
+  </md-input-container>
+<md-input-container>
     <label for="vehicle.style">Body Style: </label>
     <input type="text" ng-model="vc.newVehicle.body_style" />
-  </div>
-  <div>
+  </md-input-container>
+<md-input-container>
       <label for="vehicle.mileage">Mileage: </label>
       <input type="text" ng-model="vc.newVehicle.mileage" />
-  </div>
+  </md-input-container>
       <button class="btn btn-primary" ng-click="vc.addVehicle()">Add Vehicle</button>
       <a href="#garage">Garage</a>
 </form>
