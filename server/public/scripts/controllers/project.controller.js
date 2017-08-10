@@ -5,5 +5,7 @@ myApp.controller('ProjectController', ['$http', 'ProjectService', function($http
   pc.projectService = ProjectService;
   pc.userPackage = ProjectService.userPackage;
 
+  pc.projectService.getProject();
+
 
 }]); //end of ProjectController

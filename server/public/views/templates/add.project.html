@@ -1,41 +1,33 @@
-<div class="container">
-
+<form>
   <md-input-container md-no-float>
-    <!-- <label>Type: </label> -->
-    <input type="text" placeholder="Diy or Shop" ng-model="pc.project.type">
+    <input type="text" placeholder="Diy or Shop" ng-model="pc.projectService.newProject.type">
   </md-input-container>
 
   <md-input-container>
-    <!-- <label>Date: </label> -->
-    <input type="date" placeholder="Date" ng-model="pc.project.date">
+    <input type="text" placeholder="Date" ng-model="pc.projectService.newProject.date" />
   </md-input-container>
 
   <md-input-container>
-    <!-- <label>Task: </label> -->
-    <input type="text" placeholder="Task" ng-model="pc.project.task">
+    <input type="text" placeholder="Task" ng-model="pc.projectService.newProject.task" />
   </md-input-container>
 
   <md-input-container>
-    <!-- <label>Part Brand: </label> -->
-    <input type="text" placeholder="Part Brand" ng-model="pc.project.part_brand">
+    <input type="text" placeholder="Part Brand" ng-model="pc.projectService.newProject.part_brand" />
   </md-input-container>
 
   <md-input-container>
-    <!-- <label>Part Number: </label> -->
-    <input type="text" placeholder="Part Number" ng-model="pc.project.part_number">
+    <input type="text" placeholder="Part Number" ng-model="pc.projectService.newProject.part_number" />
   </md-input-container>
 
   <md-input-container>
-    <!-- <label>Current Mileage: </label> -->
-    <input type="number" placeholder="Current Mileage" ng-model="pc.project.mileage">
+    <input type="text" placeholder="Current Mileage" ng-model="pc.projectService.newProject.mileage" />
   </md-input-container>
 
   <md-input-container>
-    <!-- <label>Notes: </label> -->
-    <input type="text" placeholder="Notes" ng-model="pc.project.notes">
+    <input type="text" placeholder="Notes" ng-model="pc.projectService.newProject.notes" />
   </md-input-container>
 
-  <button class="btn btn-primary" ng-click="pc.addProject()">Add Project</button>
+  <button class="btn btn-primary" ng-click="pc.projectService.addProject()">Add Project</button>
 
   <a href="#garage">Garage</a>
-</div>
+</form>

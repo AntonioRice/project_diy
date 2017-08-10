@@ -13,6 +13,14 @@ myApp.config(function($routeProvider, $locationProvider) {
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController as lc'
     })
+    .when('/garage', {
+      templateUrl: '/views/templates/garage.html',
+      controller: 'VehicleController as vc'
+    })
+    .when('/projects', {
+      templateUrl: '/views/templates/projects.html',
+      controller: 'ProjectController as pc'
+    })
     .when('/add_vehicle', {
       templateUrl: '/views/templates/add.vehicle.html',
       controller: 'VehicleController as vc'
@@ -20,10 +28,6 @@ myApp.config(function($routeProvider, $locationProvider) {
     .when('/add_project', {
       templateUrl: '/views/templates/add.project.html',
       controller: 'ProjectController as pc'
-    })
-    .when('/garage', {
-      templateUrl: '/views/templates/garage.html',
-      controller: 'VehicleController as vc'
     })
     .when('/user', {
       templateUrl: '/views/templates/user.html',

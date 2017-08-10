@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 // create the Schema
 var projectSchema = new Schema({
+  username: {type: String},
   type: {type: String},
   date: {type: Date},
   task: {type: String},

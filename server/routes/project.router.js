@@ -4,7 +4,8 @@ var Project = require('../models/project_schema.js');
 
 //retrieve projects upon page-load
 router.get('/', function(req, res){
-  Project.find({}, function(err, data) {
+  Project.find({username: req.user.username},
+    function(err, data) {
     if(err) {
       console.log('find error:', err);
       res.sendStatus(500);
@@ -17,7 +18,9 @@ router.get('/', function(req, res){
 //ability to add new project to specific vehicle
 
 router.post('/', function(req, res){
+  console.log(req.params);
   console.log('log the data: ', req.body);
+  req.body.username = req.user.username;
   var addProject = new Project(req.body);
   // insert into the project collection
   addProject.save(function(err, data) {
