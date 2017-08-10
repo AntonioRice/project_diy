@@ -3,12 +3,8 @@ myApp.controller('VehicleController', ['$http', 'UserService', function($http, U
 
   var vc = this;
   vc.userService = UserService;
-
   vc.userPackage = UserService.userPackage;
-
-  // console.log(vc.userService);
+  //appending vehicles to dom upon pageload
   vc.userService.getVehicle();
-
-
 
 }]); //end of controller

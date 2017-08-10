@@ -3,11 +3,12 @@ myApp.factory('UserService', function($http, $location){
 
   var userPackage = {};
   // var userGarage = {};
-  // var newVehicle = {};
+  var newVehicle = {};
+
   return {
     userPackage : userPackage,
     // userGarage : userGarage,
-    // newVehicle : newVehicle,
+    newVehicle : newVehicle,
     //userPackage data
     getuser : function(){
       console.log('UserService -- getuser');
@@ -52,7 +53,6 @@ myApp.factory('UserService', function($http, $location){
       $http.post('/vehicle', newVehicle)
       .then(function(response){
         console.log('vehicle added', response);
-        getVehicle(); //refresh
         });
     },
   //delete vehicle from garage
@@ -60,7 +60,6 @@ myApp.factory('UserService', function($http, $location){
       $http.delete('/vehicle/' + id)
       .then(function(response){
       console.log('vehicle deleted', id);
-      getVehicle();
       });
     },
 
@@ -73,4 +72,5 @@ myApp.factory('UserService', function($http, $location){
     }
 
   }; //end of return
+
 }); //end of factory
