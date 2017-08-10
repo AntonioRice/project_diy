@@ -5,7 +5,9 @@ var Vehicle = require('../models/vehicle_schema.js');
 
 //retrieve vehicles from database to display to dom
 router.get('/', function(req, res){
-  Vehicle.find({}, function(err, data) {
+  console.log(req.user.username)
+  Vehicle.find({username: req.user.username}, 
+  function(err, data) {
     if(err) {
       console.log('find error:', err);
       res.sendStatus(500);
@@ -19,6 +21,9 @@ router.get('/', function(req, res){
 //ability to add new vehicles
 router.post('/', function(req, res){
   console.log('sent data: ', req.body);
+  // console.log(req.user);
+  req.body.username = req.user.username;
+  // console.log(req.body);
   var addVehicle = new Vehicle(req.body);
   // insert into the vehicles collection
   addVehicle.save(function(err, data) {
@@ -46,26 +51,27 @@ router.delete('/:id', function(req, res) {
     })
 }); //end of delete
 
-router.put('/:id', function(req, res){
-  console.log('Updated data is: ', req.body);
-  Vehicle.findByIdAndUpdate(
-    {_id: req.params.id},
-    {$set:
-      {year: req.body.year,
-       make: req.body.make,
-       model: req.body.model,
-       body_style: req.body.body_style,
-       mileage: req.body.mileage}
-    },
-    function(err, data){
-      if(err){
-        console.log('update error: ', err);
-      } else {
-        res.sendStatus(200);
-      }
-    }
-  );
-}); // end of PUT Router
+//update feature not functional
+// router.put('/:id', function(req, res){
+//   console.log('Updated data is: ', req.body);
+//   Vehicle.findByIdAndUpdate(
+//     {_id: req.params.id},
+//     {$set:
+//       {year: req.body.year,
+//        make: req.body.make,
+//        model: req.body.model,
+//        body_style: req.body.body_style,
+//        mileage: req.body.mileage}
+//     },
+//     function(err, data){
+//       if(err){
+//         console.log('update error: ', err);
+//       } else {
+//         res.sendStatus(200);
+//       }
+//     }
+//   );
+// }); // end of PUT Router
 
 
 module.exports = router;

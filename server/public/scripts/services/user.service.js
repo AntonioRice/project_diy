@@ -42,7 +42,7 @@ myApp.factory('UserService', function($http, $location){
   //ability to get vehicle
     getVehicle : function(){
       $http.get('/vehicle').then(function(response){
-        console.log(response.data);
+      //  console.log(response.data);
         userPackage.vehicle = response.data;
         console.log(userPackage.vehicle);
       });
