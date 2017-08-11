@@ -3,11 +3,16 @@ myApp.factory('UserService', function($http, $location){
 
   var userPackage = {};
   var newVehicle = {};
+  //might not need, review
+  var vehicleId;
+  //might not need, review
+  var idArray = [];
 
   return {
     userPackage : userPackage,
-    // userGarage : userGarage,
     newVehicle : newVehicle,
+    vehicleId: vehicleId,
+    idArray: idArray,
     //userPackage data
     getuser : function(){
       console.log('UserService -- getuser');
@@ -39,11 +44,20 @@ myApp.factory('UserService', function($http, $location){
     //garage information
 
   //ability to get vehicle
+  //might not need, review
     getVehicle : function(){
       $http.get('/vehicle').then(function(response){
-      //  console.log(response.data);
-        userPackage.vehicle = response.data;
-        console.log(userPackage.vehicle);
+       console.log(response.data);
+       userPackage.vehicle = response.data;
+       for (var i = 0; i <userPackage.vehicle.length; i++) {
+         vehicleId = userPackage.vehicle[i]._id;
+         idArray.push(vehicleId);
+         if (userPackage.userName = userPackage.vehicle[i].username) {
+            console.log("IT FREAKING WORKED");
+            console.log('Vehicle id: ', vehicleId);
+            console.log("ALL Vehicle Ids: ", idArray);
+         }
+       }
       });
     },
 

@@ -1,16 +1,22 @@
-myApp.factory('ProjectService', function($http, $location){
+myApp.factory('ProjectService', function($http, $location, UserService){
   console.log('ProjectService Loaded');
+
+
+  console.log(UserService.idArray);
 
   var userPackage = {};
   var newProject = {};
+  var selectedVehicle = {};
+
 
   return {
     userPackage : userPackage,
     newProject : newProject,
+    selectedVehicle: selectedVehicle,
 
     //get project
-    getProject : function(){
-      $http.get('/project').then(function(response){
+    getProject : function(id){
+      $http.get('/project/' + id).then(function(response){
         console.log(response.data);
         userPackage.project = response.data;
       });
@@ -18,7 +24,9 @@ myApp.factory('ProjectService', function($http, $location){
 
     //add project
     addProject : function(){
-      $http.post('/project', newProject)
+      //selectedVehicleid was set buy vehicle controller
+      console.log('addProject to vehicle with id', selectedVehicle.id)
+      $http.post('/project/' + selectedVehicle.id , newProject)
       .then(function(response){
         console.log('project added', response);
         // getProject(); //refresh

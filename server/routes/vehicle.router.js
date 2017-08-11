@@ -3,10 +3,11 @@ var express = require('express');
 var router = express.Router();
 var Vehicle = require('../models/vehicle_schema.js');
 
+
 //retrieve vehicles from database to display to dom
 router.get('/', function(req, res){
   console.log(req.user.username)
-  Vehicle.find({username: req.user.username}, 
+  Vehicle.find({username: req.user.username},
   function(err, data) {
     if(err) {
       console.log('find error:', err);
@@ -21,9 +22,8 @@ router.get('/', function(req, res){
 //ability to add new vehicles
 router.post('/', function(req, res){
   console.log('sent data: ', req.body);
-  // console.log(req.user);
+
   req.body.username = req.user.username;
-  // console.log(req.body);
   var addVehicle = new Vehicle(req.body);
   // insert into the vehicles collection
   addVehicle.save(function(err, data) {

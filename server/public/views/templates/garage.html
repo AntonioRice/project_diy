@@ -4,6 +4,7 @@
       <div ng-repeat="item in vc.userPackage.vehicle" class="md-card-image">
         <md-card>
           <md-card-content>
+            <P>Nick Name: {{item.name}}</p>
             <p>Year: {{item.year}}</p>
             <p>Make: {{item.make}}</p>
             <p>Model: {{item.model}}</p>
@@ -11,12 +12,14 @@
             <p>Mileage: {{item.mileage}}</p>
             <button  ng-click="vc.userService.deleteVehicle(item._id)">Delete</button>
             <button  ng-click="vc.userService.updateVehicle(item._id)">Edit</button>
-            <a href="#projects">Projects</a>
+            <button ng-click="vc.gotoProjectsFor(item._id)">Projects</button>
           </md-card-content>
         </md-card>
       </div>
     </div>
   </div>
+<div class="btn">
   <a href="#add_vehicle">Add Vehicle</a>
   <a href="#user">Home</a>
+</div>
 </body>

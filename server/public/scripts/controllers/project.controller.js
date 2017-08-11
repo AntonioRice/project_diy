@@ -8,4 +8,5 @@ myApp.controller('ProjectController', ['$http', 'ProjectService', function($http
   pc.projectService.getProject();
 
 
+
 }]); //end of ProjectController
