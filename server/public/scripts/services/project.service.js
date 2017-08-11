@@ -1,8 +1,5 @@
-myApp.factory('ProjectService', function($http, $location, UserService){
+myApp.factory('ProjectService', function($http, $location, VehicleService){
   console.log('ProjectService Loaded');
-
-
-  console.log(UserService.idArray);
 
   var userPackage = {};
   var newProject = {};
@@ -15,8 +12,8 @@ myApp.factory('ProjectService', function($http, $location, UserService){
     selectedVehicle: selectedVehicle,
 
     //get project
-    getProject : function(id){
-      $http.get('/project/' + id).then(function(response){
+    getProject : function(){
+      $http.get('/project/' + selectedVehicle.id).then(function(response){
         console.log(response.data);
         userPackage.project = response.data;
       });
@@ -24,12 +21,12 @@ myApp.factory('ProjectService', function($http, $location, UserService){
 
     //add project
     addProject : function(){
-      //selectedVehicleid was set buy vehicle controller
+      //selectedVehicleid was set by vehicle controller
       console.log('addProject to vehicle with id', selectedVehicle.id)
       $http.post('/project/' + selectedVehicle.id , newProject)
       .then(function(response){
+        $location.path('/projects');
         console.log('project added', response);
-        // getProject(); //refresh
       });
     },
 

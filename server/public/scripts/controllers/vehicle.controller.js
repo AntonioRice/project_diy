@@ -1,20 +1,24 @@
-//order matters, both linked in array min. at later date
-myApp.controller('VehicleController', ['$http', '$location', 'UserService', 'ProjectService', function($http, $location, UserService, ProjectService) {
+//Order matters. Included [] for minification in future.
+myApp.controller('VehicleController', ['$http', '$location', 'VehicleService', 'ProjectService', 'UserService',
+function($http, $location, VehicleService, ProjectService, UserService) {
   console.log('VehicleController created');
 
   var vc = this;
+  //ability to use returned items in UserService
   vc.userService = UserService;
-  vc.userPackage = UserService.userPackage;
-  //appending vehicles to dom upon pageload
-  vc.userService.getVehicle();
-
+  //ability to use returned items in VehicleService
+  vc.vehicleService = VehicleService;
+  //ability to use returned items in ProjectService
   vc.projectService = ProjectService;
+
+  vc.userPackage = VehicleService.userPackage;
+  //appending vehicles to dom upon pageload
+  vc.vehicleService.getVehicle();
 
 //this is being called in garage.html with (item._id //which is the vehicle id)
   vc.gotoProjectsFor = function(selectedVehicleId) {
-  
     vc.projectService.selectedVehicle.id = selectedVehicleId;
-    //being redirected to the project page, in html changed ref to button
+    //being redirected to the project page, when button is clicked.
     $location.path('/projects');
   }
 

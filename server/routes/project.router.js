@@ -5,7 +5,7 @@ var Project = require('../models/project_schema.js');
 //retrieve projects upon page-load
 router.get('/:id', function(req, res){
   console.log(req.params.id);
-  Project.find({identifier: req.params.id},
+    Project.find({identifier: req.params.id},
     function(err, data) {
     if(err) {
       console.log('find error:', err);
@@ -20,13 +20,11 @@ router.get('/:id', function(req, res){
 
 // URL param is the vehicle id, req.body is the service information
 router.post('/:vehicleid', function(req, res){
-
   console.log('LOGGING THE DATA: ', req.body);
   var vehicleId = req.params.vehicleid;
-
   req.body.username = req.user.username;
-
   req.body.identifier = vehicleId;
+
   var addProject = new Project(req.body);
   // insert into the project collection
   addProject.save(function(err, data) {

@@ -22,7 +22,6 @@ router.get('/', function(req, res){
 //ability to add new vehicles
 router.post('/', function(req, res){
   console.log('sent data: ', req.body);
-
   req.body.username = req.user.username;
   var addVehicle = new Vehicle(req.body);
   // insert into the vehicles collection
@@ -51,27 +50,31 @@ router.delete('/:id', function(req, res) {
     })
 }); //end of delete
 
-//update feature not functional
-// router.put('/:id', function(req, res){
-//   console.log('Updated data is: ', req.body);
-//   Vehicle.findByIdAndUpdate(
-//     {_id: req.params.id},
-//     {$set:
-//       {year: req.body.year,
-//        make: req.body.make,
-//        model: req.body.model,
-//        body_style: req.body.body_style,
-//        mileage: req.body.mileage}
-//     },
-//     function(err, data){
-//       if(err){
-//         console.log('update error: ', err);
-//       } else {
-//         res.sendStatus(200);
-//       }
-//     }
-//   );
-// }); // end of PUT Router
+// update feature not functional
+
+router.put('/:id', function(req, res){
+
+  console.log('Updated data is: ', req.body);
+  console.log('Updated data is: ', req.params);
+
+  Vehicle.findByIdAndUpdate(
+    {_id: req.params.id},
+    {$set:
+      {year: req.body.year,
+       make: req.body.make,
+       model: req.body.model,
+       body_style: req.body.body_style,
+       mileage: req.body.mileage}
+    },
+    function(err, data){
+      if(err){
+        console.log('update error: ', err);
+      } else {
+        res.sendStatus(200);
+      }
+    }
+  );
+}); // end of PUT Router
 
 
 module.exports = router;

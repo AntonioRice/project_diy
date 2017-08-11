@@ -1,4 +1,4 @@
-myApp.controller('ProjectController', ['$http', 'ProjectService', function($http, ProjectService) {
+myApp.controller('ProjectController', ['$http','$location', 'ProjectService', function($http, $location, ProjectService) {
   console.log('ProjectController created');
 
   var pc = this;
@@ -6,7 +6,5 @@ myApp.controller('ProjectController', ['$http', 'ProjectService', function($http
   pc.userPackage = ProjectService.userPackage;
 
   pc.projectService.getProject();
-
-
 
 }]); //end of ProjectController

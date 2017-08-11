@@ -10,8 +10,7 @@ var vehicleSchema = new Schema({
   make: {type: String},
   model: {},
   body_style: {type: String},
-  mileage: {type: Number},
-  services: []
+  mileage: {type: Number}
 });
 
 // export the model

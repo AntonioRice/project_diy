@@ -10,8 +10,8 @@
             <p>Model: {{item.model}}</p>
             <p>Body Style: {{item.body_style}}</p>
             <p>Mileage: {{item.mileage}}</p>
-            <button  ng-click="vc.userService.deleteVehicle(item._id)">Delete</button>
-            <button  ng-click="vc.userService.updateVehicle(item._id)">Edit</button>
+            <button  ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</button>
+            <button  ng-click="vc.vehicleService.updateVehicle(item._id)">Edit</button>
             <button ng-click="vc.gotoProjectsFor(item._id)">Projects</button>
           </md-card-content>
         </md-card>

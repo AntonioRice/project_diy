@@ -2,17 +2,12 @@ myApp.factory('UserService', function($http, $location){
   console.log('UserService Loaded');
 
   var userPackage = {};
-  var newVehicle = {};
-  //might not need, review
-  var vehicleId;
-  //might not need, review
-  var idArray = [];
+  // var newVehicle = {};
 
   return {
     userPackage : userPackage,
-    newVehicle : newVehicle,
-    vehicleId: vehicleId,
-    idArray: idArray,
+    // newVehicle : newVehicle,
+
     //userPackage data
     getuser : function(){
       console.log('UserService -- getuser');
@@ -41,49 +36,43 @@ myApp.factory('UserService', function($http, $location){
     },
     //end of userPackage data
 
-    //garage information
+    //garage information, move to own service
 
-  //ability to get vehicle
-  //might not need, review
-    getVehicle : function(){
-      $http.get('/vehicle').then(function(response){
-       console.log(response.data);
-       userPackage.vehicle = response.data;
-       for (var i = 0; i <userPackage.vehicle.length; i++) {
-         vehicleId = userPackage.vehicle[i]._id;
-         idArray.push(vehicleId);
-         if (userPackage.userName = userPackage.vehicle[i].username) {
-            console.log("IT FREAKING WORKED");
-            console.log('Vehicle id: ', vehicleId);
-            console.log("ALL Vehicle Ids: ", idArray);
-         }
-       }
-      });
-    },
-
-  //ability to add vehicle to garage
-    addVehicle : function(){
-      $http.post('/vehicle', newVehicle)
-      .then(function(response){
-        console.log('vehicle added', response);
-        });
-    },
-  //delete vehicle from garage
-    deleteVehicle : function(id){
-      $http.delete('/vehicle/' + id)
-      .then(function(response){
-      console.log('vehicle deleted', id);
-      });
-    },
-
-    updateVehicle : function(id){
-
-      $http.put('/vehicle/' + id)
-      .then(function(response){
-      console.log('updated', id);
-      });
-    }
-
-  }; //end of return
+    //ability to get vehicle
+  //
+  //   getVehicle : function(){
+  //     $http.get('/vehicle').then(function(response){
+  //      console.log(response.data);
+  //      userPackage.vehicle = response.data;
+  //
+  //     });
+  //   },
+  //
+  // //ability to add vehicle to garage
+  //   addVehicle : function(){
+  //     $http.post('/vehicle', newVehicle)
+  //     .then(function(response){
+  //       $location.path('/garage');
+  //       console.log('vehicle added', response);
+  //       });
+  //   },
+  //
+  // //delete vehicle from garage
+  //   deleteVehicle : function(id){
+  //     $http.delete('/vehicle/' + id)
+  //     .then(function(response){
+  //     console.log('vehicle deleted', id);
+  //     });
+  // $location.path('/garage');
+  //   },
+  //
+  //   updateVehicle : function(id){
+  //     $http.put('/vehicle/' + id)
+  //     .then(function(response){
+  //     console.log('updated', id);
+  //     });
+  //   }
+  //
+   }; //end of return
 
 }); //end of factory
