@@ -16,10 +16,10 @@ function($http, $location, VehicleService, ProjectService, UserService) {
   vc.vehicleService.getVehicle();
 
 //this is being called in garage.html with (item._id //which is the vehicle id)
+
   vc.gotoProjectsFor = function(selectedVehicleId) {
     vc.projectService.selectedVehicle.id = selectedVehicleId;
     //being redirected to the project page, when button is clicked.
     $location.path('/projects');
   }
-
 }]); //end of controller

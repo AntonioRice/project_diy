@@ -1,25 +1,56 @@
-<body>
-  <div class="row">
-    <div class="col-md-12">
-      <div ng-repeat="item in pc.userPackage.project" class="md-card-image">
-        <md-card>
+<div layout-align="center">
+
+  <div ng-repeat="item in pc.userPackage.project">
+      <md-content layout-align="space-around">
+        <md-card flex="flex" flex-gt-sm="50" flex-gt-md="50">
           <md-card-content>
-            <md-card-title-text>
-              <span class="md-headline">{{item.type}}</span>
-            </md-card-title-text>
-            <p>Date: {{item.date | date}}</p>
-            <p>Task: {{item.task}}</p>
-            <p>Part Brand: {{item.part_brand}}</p>
-            <p>Part Number: {{item.part_number}}</p>
-            <p>Mileage: {{item.mileage}}</p>
-            <p>Notes: {{item.notes}}</p>
-            <md-button  ng-click="pc.projectService.deleteProject(item._id)">Delete</md-button>
-            <md-button  ng-click="pc.projectServie.updateProject(item._id)">Edit</md-button>
-          </md-card-content>
-        </md-card>
-      </div>
+          <md-card-title-text>
+            <span class="md-headline">{{item.type}}</span>
+          </md-card-title-text>
+          <p>Date: {{item.date | date}}</p>
+          <p>Task: {{item.task}}</p>
+          <p>Part Brand: {{item.part_brand}}</p>
+          <p>Part Number: {{item.part_number}}</p>
+          <p>Mileage: {{item.mileage}}</p>
+          <p>Notes: {{item.notes}}</p>
+          <md-button  ng-click="pc.projectService.deleteProject(item._id)">Delete</md-button>
+          <md-button  ng-click="pc.projectServie.updateProject(item._id)">Edit</md-button>
+        </md-content>
+      </md-card>
+    </md-card-content>
+  </div>
+
+</div>
+
+<a href="#add_project">Add Project</a>
+<a href="#garage">Garage</a>
+
+
+
+
+
+
+<!--
+<div class="row">
+  <div class="col-md-12">
+    <div ng-repeat="item in pc.userPackage.project" class="md-card-image">
+      <md-card>
+        <md-card-content>
+          <md-card-title-text>
+            <span class="md-headline">{{item.type}}</span>
+          </md-card-title-text>
+          <p>Date: {{item.date | date}}</p>
+          <p>Task: {{item.task}}</p>
+          <p>Part Brand: {{item.part_brand}}</p>
+          <p>Part Number: {{item.part_number}}</p>
+          <p>Mileage: {{item.mileage}}</p>
+          <p>Notes: {{item.notes}}</p>
+          <md-button  ng-click="pc.projectService.deleteProject(item._id)">Delete</md-button>
+          <md-button  ng-click="pc.projectServie.updateProject(item._id)">Edit</md-button>
+        </md-card-content>
+      </md-card>
     </div>
   </div>
-  <a href="#add_project">Add Project</a>
-  <a href="#garage">Garage</a>
-</body>
+</div>
+<a href="#add_project">Add Project</a>
+<a href="#garage">Garage</a> -->

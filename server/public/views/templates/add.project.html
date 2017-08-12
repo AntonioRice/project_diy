@@ -1,33 +1,42 @@
-<form layout="column" layout-padding>
+<md-content layout-align="space-around">
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
+    <md-card-content>
 
-  <md-radio-group ng-model="pc.projectService.newProject.type">
-      <md-radio-button value="DIY" class="md-primary">DIY </md-radio-button>
-      <md-radio-button value="Shop"> Shop </md-radio-button>
-  </md-radio-group>
+      <form>
+        <div layout="row">
 
-  <md-datepicker ng-model="pc.projectService.newProject.date"></md-datepicker>
-<br>
-  <md-input-container>
-    <input type="text" placeholder="Task" ng-model="pc.projectService.newProject.task" />
-  </md-input-container>
+          <md-radio-group layout="row" ng-model="pc.projectService.newProject.type">
+            <md-radio-button value="DIY" class="md-primary">DIY </md-radio-button>
+            <md-radio-button value="Shop"> Shop </md-radio-button>
+          </md-radio-group>
 
-  <md-input-container>
-    <input type="text" placeholder="Part Brand" ng-model="pc.projectService.newProject.part_brand" />
-  </md-input-container>
+          <md-datepicker md-placeholder="Enter Date" ng-model="pc.projectService.newProject.date"></md-datepicker>
+        </div>
+        <md-input-container>
+          <input type="text" placeholder="Task" ng-model="pc.projectService.newProject.task" />
+        </md-input-container>
 
-  <md-input-container>
-    <input type="text" placeholder="Part Number" ng-model="pc.projectService.newProject.part_number" />
-  </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Part Brand" ng-model="pc.projectService.newProject.part_brand" />
+        </md-input-container>
 
-  <md-input-container>
-    <input type="text" placeholder="Current Mileage" ng-model="pc.projectService.newProject.mileage" />
-  </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Part Number" ng-model="pc.projectService.newProject.part_number" />
+        </md-input-container>
 
-  <md-input-container>
-    <input type="text" placeholder="Notes" ng-model="pc.projectService.newProject.notes" />
-  </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Current Mileage" ng-model="pc.projectService.newProject.mileage" />
+        </md-input-container>
 
-  <md-button class="btn btn-primary" ng-click="pc.projectService.addProject()">Add Project</md-button>
+        <md-input-container>
+          <input type="text" placeholder="Notes" ng-model="pc.projectService.newProject.notes" md-maxlength ="250"/>
+        </md-input-container>
 
-  <a href="#garage">Garage</a>
-</form>
+        <md-button class="btn btn-primary" ng-click="pc.projectService.addProject()">Add Project</md-button>
+        <a href="#garage">Garage</a>
+
+      </form>
+
+    </md-content>
+  </md-card>
+</md-card-content>

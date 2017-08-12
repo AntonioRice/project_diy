@@ -28,6 +28,7 @@ myApp.factory('ProjectService', function($http, $location, VehicleService){
         $location.path('/projects');
         console.log('project added', response);
       });
+        
     },
 
     //delete project

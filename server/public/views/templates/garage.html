@@ -1,9 +1,8 @@
-<body>
+<body layout="row">
 
   <md-content class="md-padding" layout-xs="column" layout="row">
-    <div>
       <div ng-repeat="item in vc.userPackage.vehicle" class="md-card-image">
-        <md-card>
+        <md-card flex="33" >
           <md-card-content>
 
           <md-card-title-text>
@@ -18,15 +17,15 @@
             <md-button  ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</md-button>
             <md-button  ng-click="vc.vehicleService.updateVehicle(item._id)">Edit</md-button>
             <md-button ng-click="vc.gotoProjectsFor(item._id)">Projects</md-button>
-            
+
           </md-card-content>
         </md-card>
       </div>
-    </div>
   </md-content>
+
+</body>
 
 <div class="btn">
   <a href="#add_vehicle">Add Vehicle</a>
   <a href="#user">Home</a>
 </div>
-</body>

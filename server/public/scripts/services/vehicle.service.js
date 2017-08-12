@@ -1,4 +1,4 @@
-myApp.factory('VehicleService', function($http, $location, UserService){
+myApp.factory('VehicleService', function($http, $location, $window, UserService){
   console.log('VehicleService Loaded');
 
   var userPackage = {};
@@ -23,6 +23,7 @@ myApp.factory('VehicleService', function($http, $location, UserService){
     addVehicle : function(){
       $http.post('/vehicle', newVehicle)
       .then(function(response){
+        $window.location.reload();
         $location.path('/garage');
         console.log('vehicle added', response);
         });
@@ -34,7 +35,8 @@ myApp.factory('VehicleService', function($http, $location, UserService){
       .then(function(response){
       console.log('vehicle deleted', id);
       });
-  $location.path('/garage');
+      $window.location.reload();
+
     },
 
   //update vehicle information
@@ -44,7 +46,6 @@ myApp.factory('VehicleService', function($http, $location, UserService){
       console.log('updated', id);
       });
     }
-
   }; //end of return
 
 }); //end of factory
