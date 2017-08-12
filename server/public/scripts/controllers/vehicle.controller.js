@@ -1,5 +1,5 @@
 //Order matters. Included [] for minification in future.
-myApp.controller('VehicleController', ['$http', '$location', 'VehicleService', 'ProjectService', 'UserService',
+myApp.controller('VehicleController', ['$http', '$location', 'VehicleService','ProjectService', 'UserService',
 function($http, $location, VehicleService, ProjectService, UserService) {
   console.log('VehicleController created');
 
