@@ -4,15 +4,17 @@
       <div ng-repeat="item in pc.userPackage.project" class="md-card-image">
         <md-card>
           <md-card-content>
-            <p>Type: {{item.type}}</p>
-            <p>Date: {{item.date}}</p>
+            <md-card-title-text>
+              <span class="md-headline">{{item.type}}</span>
+            </md-card-title-text>
+            <p>Date: {{item.date | date}}</p>
             <p>Task: {{item.task}}</p>
             <p>Part Brand: {{item.part_brand}}</p>
             <p>Part Number: {{item.part_number}}</p>
             <p>Mileage: {{item.mileage}}</p>
             <p>Notes: {{item.notes}}</p>
-            <button  ng-click="pc.projectService.deleteProject(item._id)">Delete</button>
-            <button  ng-click="pc.projectServie.updateProject(item._id)">Edit</button>
+            <md-button  ng-click="pc.projectService.deleteProject(item._id)">Delete</md-button>
+            <md-button  ng-click="pc.projectServie.updateProject(item._id)">Edit</md-button>
           </md-card-content>
         </md-card>
       </div>

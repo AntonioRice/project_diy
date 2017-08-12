@@ -1,23 +1,30 @@
 <body>
-  <div class="row">
-    <div class="col-md-12">
+
+  <md-content class="md-padding" layout-xs="column" layout="row">
+    <div>
       <div ng-repeat="item in vc.userPackage.vehicle" class="md-card-image">
         <md-card>
           <md-card-content>
-            <P>Nick Name: {{item.name}}</p>
+
+          <md-card-title-text>
+            <span class="md-headline">{{item.name}}</span>
+          </md-card-title-text>
+
             <p>Year: {{item.year}}</p>
             <p>Make: {{item.make}}</p>
             <p>Model: {{item.model}}</p>
             <p>Body Style: {{item.body_style}}</p>
             <p>Mileage: {{item.mileage}}</p>
-            <button  ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</button>
-            <button  ng-click="vc.vehicleService.updateVehicle(item._id)">Edit</button>
-            <button ng-click="vc.gotoProjectsFor(item._id)">Projects</button>
+            <md-button  ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</md-button>
+            <md-button  ng-click="vc.vehicleService.updateVehicle(item._id)">Edit</md-button>
+            <md-button ng-click="vc.gotoProjectsFor(item._id)">Projects</md-button>
+            
           </md-card-content>
         </md-card>
       </div>
     </div>
-  </div>
+  </md-content>
+
 <div class="btn">
   <a href="#add_vehicle">Add Vehicle</a>
   <a href="#user">Home</a>

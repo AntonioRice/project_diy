@@ -1,12 +1,12 @@
-<form>
-  <md-input-container md-no-float>
-    <input type="text" placeholder="Diy or Shop" ng-model="pc.projectService.newProject.type">
-  </md-input-container>
+<form layout="column" layout-padding>
 
-  <md-input-container>
-    <input type="text" placeholder="Date" ng-model="pc.projectService.newProject.date" />
-  </md-input-container>
+  <md-radio-group ng-model="pc.projectService.newProject.type">
+      <md-radio-button value="DIY" class="md-primary">DIY </md-radio-button>
+      <md-radio-button value="Shop"> Shop </md-radio-button>
+  </md-radio-group>
 
+  <md-datepicker ng-model="pc.projectService.newProject.date"></md-datepicker>
+<br>
   <md-input-container>
     <input type="text" placeholder="Task" ng-model="pc.projectService.newProject.task" />
   </md-input-container>
@@ -27,7 +27,7 @@
     <input type="text" placeholder="Notes" ng-model="pc.projectService.newProject.notes" />
   </md-input-container>
 
-  <button class="btn btn-primary" ng-click="pc.projectService.addProject()">Add Project</button>
+  <md-button class="btn btn-primary" ng-click="pc.projectService.addProject()">Add Project</md-button>
 
   <a href="#garage">Garage</a>
 </form>
