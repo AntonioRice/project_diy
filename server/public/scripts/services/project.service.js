@@ -1,4 +1,4 @@
-myApp.factory('ProjectService', function($http, $location, VehicleService){
+myApp.factory('ProjectService', function($http, $location){
   console.log('ProjectService Loaded');
 
   var userPackage = {};
@@ -28,7 +28,7 @@ myApp.factory('ProjectService', function($http, $location, VehicleService){
         $location.path('/projects');
         console.log('project added', response);
       });
-        
+
     },
 
     //delete project

@@ -1,4 +1,4 @@
-myApp.factory('VehicleService', function($http, $location, $window, UserService){
+myApp.factory('VehicleService', function($http, $location, $window, UserService, ProjectService){
   console.log('VehicleService Loaded');
 
   var userPackage = {};
@@ -7,8 +7,6 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService)
   return {
     userPackage : userPackage,
     newVehicle : newVehicle,
-
-    //garage information, move to own service
 
     //ability to get vehicle
 
@@ -37,6 +35,13 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService)
       });
       $window.location.reload();
 
+    },
+    
+    gotoProjectsFor : function(selectedVehicleId) {
+      ProjectService.selectedVehicle.id = selectedVehicleId;
+      console.log("ID FOR SELECTED CAR: ", selectedVehicleId);
+      //being redirected to the project page, when button is clicked.
+      $location.path('/projects');
     },
 
   //update vehicle information

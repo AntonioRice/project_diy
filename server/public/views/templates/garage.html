@@ -14,9 +14,10 @@
             <p>Model: {{item.model}}</p>
             <p>Body Style: {{item.body_style}}</p>
             <p>Mileage: {{item.mileage}}</p>
+            
             <md-button  ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</md-button>
             <md-button  ng-click="vc.vehicleService.updateVehicle(item._id)">Edit</md-button>
-            <md-button ng-click="vc.gotoProjectsFor(item._id)">Projects</md-button>
+            <md-button ng-click="vc.vehicleService.gotoProjectsFor(item._id)">Projects</md-button>
 
           </md-card-content>
         </md-card>
