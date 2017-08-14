@@ -47,6 +47,7 @@ router.put('/:id', function(req, res){
     if(err) {
       throw err;
     } else {
+      //if item is was changed, update it. If not, keep it the same
       foundProject.identifier = req.body.identifier || foundProject.identifier;
       foundProject.username = req.body.username || foundProject.username;
       foundProject.type = req.body.type || foundProject.type;

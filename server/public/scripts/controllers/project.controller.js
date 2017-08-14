@@ -18,9 +18,16 @@ function($http, $location, VehicleService, ProjectService, UserService) {
     console.log("clicked");
     pc.editProject = newProject;
     console.log(newProject);
-    console.log(newProject);
+    console.log(newProject._id);
   }
   pc.cancelUpdate = function(){
     pc.editProject = undefined;
+  }
+
+  pc.gotoAddProjectFrom = function(){
+    $location.path('/add_project');
+  }
+  pc.gotoGarage = function(){
+    $location.path('/garage');
   }
 }]); //end of ProjectController

@@ -1,23 +1,24 @@
+<div ng-include="'views/partials/nav.html'"></div>
 <body layout="row">
 
   <md-content class="md-padding" layout-xs="column" layout="row" ng-if="!vc.editVehicle">
       <div ng-repeat="item in vc.userPackage.vehicle" class="md-card-image">
-        <md-card flex="33" >
+        <md-card flex="33">
           <md-card-content>
 
           <md-card-title-text>
             <span class="md-headline">{{item.name}}</span >
           </md-card-title-text>
 
-            <p>Year: {{item.year}}</p>
-            <p>Make: {{item.make}}</p>
-            <p>Model: {{item.model}}</p>
-            <p>Body Style: {{item.body_style}}</p>
-            <p>Mileage: {{item.mileage}}</p>
+            <p><span class="md-subhead">Year:</span> {{item.year}}</p>
+            <p><span class="md-subhead">Make:</span> {{item.make}}</p>
+            <p><span class="md-subhead">Model:</span> {{item.model}}</p>
+            <p><span class="md-subhead">Body Style:</span> {{item.body_style}}</p>
+            <p><span class="md-subhead">Mileage:</span> {{item.mileage}}</p>
 
-            <md-button ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</md-button>
-            <md-button ng-click="vc.toggleUpdateVehicle(item)">Edit</md-button>
-            <md-button ng-click="vc.vehicleService.gotoProjectsFor(item._id)">Projects</md-button>
+            <md-button class="md-raised md-warn" ng-click="vc.vehicleService.deleteVehicle(item._id)">X</md-button>
+            <md-button class="md-raised" ng-click="vc.toggleUpdateVehicle(item)">Edit</md-button>
+            <md-button class="md-raised" ng-click="vc.vehicleService.gotoProjectsFor(item._id)">P</md-button>
 
           </md-card-content>
         </md-card>
@@ -27,14 +28,15 @@
 </body>
 
 <div class="btn">
-  <a href="#add_vehicle">Add Vehicle</a>
-  <a href="#user">Home</a>
+  <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button>
+  <!-- <md-button class="button md-raised" ng-click="vc.logout()">Logout</md-button> -->
 </div>
 
 <!-- edit form -->
 <md-content layout-align="space-around" ng-if="vc.editVehicle">
   <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
     <md-card-content>
+
       <form ng-model="vc.editVehicle">
         <md-input-container>
           <input type="text" placeholder="Nick Name" ng-model="vc.vehicleService.editVehicle.name"/>
@@ -60,10 +62,12 @@
           <input type="text" placeholder="Mileage" ng-model="vc.vehicleService.editVehicle.mileage" />
           {{vc.editVehicle.mileage}}
         </md-input-container>
-        <md-button class="btn btn-primary" ng-click="vc.vehicleService.updatingVehicle(vc.editVehicle._id)">
+
+        <md-button class="button md-raised" ng-click="vc.vehicleService.updatingVehicle(vc.editVehicle._id)">
           Update Vehicle</md-button>
-        <md-button ng-click="vc.cancelUpdate()">Cancel</md-button>
+        <md-button class="button md-raised" ng-click="vc.cancelUpdate()">Cancel</md-button>
       </form>
+      
     </md-card-content>
   </md-card>
 </md-content>

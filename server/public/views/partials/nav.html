@@ -1,8 +1,7 @@
-<div class="navbar">
-  <div class="container">
-    <ul>
-      <li><a href="#/user">Home</a></li>
-      <li><a href="#/garage">Garage</a></li>
-    </ul>
+<body ng-app="myApp">
+  <div class="navbar" ng-controller="NavController as nc">
+    <div class="container">
+    <md-button class="btn md-raised" ng-click="nc.userService.logout()">Logout</md-button>
+    </div>
   </div>
-</div>
+</body>

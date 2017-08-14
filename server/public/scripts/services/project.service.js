@@ -48,8 +48,8 @@ myApp.factory('ProjectService', function($http, $location, $window){
       $http.delete('/project/' + id)
       .then(function(response){
         console.log('project deleted', id);
-        // getProject();
       });
+      $window.location.reload();
     }
   }; //end of return
 

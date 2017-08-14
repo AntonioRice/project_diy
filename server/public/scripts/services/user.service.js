@@ -2,12 +2,9 @@ myApp.factory('UserService', function($http, $location){
   console.log('UserService Loaded');
 
   var userPackage = {};
-  // var newVehicle = {};
 
   return {
     userPackage : userPackage,
-    // newVehicle : newVehicle,
-
     //userPackage data
     getuser : function(){
       console.log('UserService -- getuser');
