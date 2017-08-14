@@ -16,7 +16,7 @@
             <p>Mileage: {{item.mileage}}</p>
 
             <md-button ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</md-button>
-            <md-button ng-click="vc.updateVehicle(item)">Edit</md-button>
+            <md-button ng-click="vc.toggleUpdateVehicle(item)">Edit</md-button>
             <md-button ng-click="vc.vehicleService.gotoProjectsFor(item._id)">Projects</md-button>
 
           </md-card-content>

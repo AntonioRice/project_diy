@@ -1,4 +1,4 @@
-<div layout-align="center">
+<div layout-align="center" ng-if="!pc.editProject">
 
   <div ng-repeat="item in pc.userPackage.project">
       <md-content layout-align="space-around">
@@ -14,7 +14,7 @@
           <p>Mileage: {{item.mileage}}</p>
           <p>Notes: {{item.notes}}</p>
           <md-button  ng-click="pc.projectService.deleteProject(item._id)">Delete</md-button>
-          <md-button  ng-click="pc.projectServie.updateProject(item._id)">Edit</md-button>
+            <md-button ng-click="pc.toggleUpdateProject(item)">Edit</md-button>
         </md-content>
       </md-card>
     </md-card-content>
@@ -25,32 +25,54 @@
 <a href="#add_project">Add Project</a>
 <a href="#garage">Garage</a>
 
+<!-- edit project form -->
 
+<md-content layout-align="space-around" ng-if="pc.editProject">
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
+    <md-card-content>
 
+      <form ng-model="pc.editProject">
+        <div layout="row">
 
+          <md-radio-group layout="row" ng-model="pc.projectService.editProject.type">
+            <md-radio-button value="DIY" class="md-primary">DIY </md-radio-button>
+            <md-radio-button value="Shop"> Shop </md-radio-button>
+          </md-radio-group>
 
+          <md-datepicker md-placeholder="Enter Date" ng-model="pc.projectService.editProject.date"></md-datepicker>
+        </div>
 
-<!--
-<div class="row">
-  <div class="col-md-12">
-    <div ng-repeat="item in pc.userPackage.project" class="md-card-image">
-      <md-card>
-        <md-card-content>
-          <md-card-title-text>
-            <span class="md-headline">{{item.type}}</span>
-          </md-card-title-text>
-          <p>Date: {{item.date | date}}</p>
-          <p>Task: {{item.task}}</p>
-          <p>Part Brand: {{item.part_brand}}</p>
-          <p>Part Number: {{item.part_number}}</p>
-          <p>Mileage: {{item.mileage}}</p>
-          <p>Notes: {{item.notes}}</p>
-          <md-button  ng-click="pc.projectService.deleteProject(item._id)">Delete</md-button>
-          <md-button  ng-click="pc.projectServie.updateProject(item._id)">Edit</md-button>
-        </md-card-content>
-      </md-card>
-    </div>
-  </div>
-</div>
-<a href="#add_project">Add Project</a>
-<a href="#garage">Garage</a> -->
+        <md-input-container>
+          <input type="text" placeholder="Task" ng-model="pc.projectService.editProject.task" />
+          {{pc.editProject.task}}
+        </md-input-container>
+
+        <md-input-container>
+          <input type="text" placeholder="Part Brand" ng-model="pc.projectService.editProject.part_brand" />
+          {{pc.editProject.part_brand}}
+        </md-input-container>
+
+        <md-input-container>
+          <input type="text" placeholder="Part Number" ng-model="pc.projectService.editProject.part_number" />
+          {{pc.editProject.part_number}}
+        </md-input-container>
+
+        <md-input-container>
+          <input type="text" placeholder="Current Mileage" ng-model="pc.projectService.editProject.mileage" />
+          {{pc.editProject.mileage}}
+        </md-input-container>
+
+        <md-input-container>
+          <input type="text" placeholder="Notes" ng-model="pc.projectService.editProject.notes" md-maxlength ="250"/>
+          {{pc.editProject.notes}}
+        </md-input-container>
+
+        <md-button class="btn btn-primary" ng-click="pc.projectService.updatingProject(pc.editProject._id)">
+          Update Project</md-button>
+        <button type="button" ng-click="pc.cancelUpdate()">Cancel</button>
+
+      </form>
+
+    </md-content>
+  </md-card>
+</md-card-content>

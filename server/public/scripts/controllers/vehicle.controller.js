@@ -14,7 +14,7 @@ function($http, $location, VehicleService, ProjectService, UserService) {
   //appending vehicles to dom upon pageload
   vc.vehicleService.getVehicle();
 
-  vc.updateVehicle = function(newVehicle){
+  vc.toggleUpdateVehicle = function(newVehicle){
     console.log("clicked");
     vc.editVehicle = newVehicle;
     console.log(newVehicle);

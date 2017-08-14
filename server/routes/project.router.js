@@ -39,6 +39,35 @@ router.post('/:vehicleid', function(req, res){
 }); //end of post
 
 //ability to update project
+router.put('/:id', function(req, res){
+  console.log('Updated data is: ', req.body);
+  console.log('Updated Project is: ', req.params);
+
+  Project.findById(req.params.id, function(err, foundProject){
+    if(err) {
+      throw err;
+    } else {
+      foundProject.identifier = req.body.identifier || foundProject.identifier;
+      foundProject.username = req.body.username || foundProject.username;
+      foundProject.type = req.body.type || foundProject.type;
+      foundProject.date = req.body.date || foundProject.date;
+      foundProject.task = req.body.task|| foundProject.task;
+      foundProject.part_brand = req.body.part_brand || foundProject.part_brand;
+      foundProject.part_number = req.body.part_number || foundProject.part_number;
+      foundProject.mileage = req.body.mileage || foundProject.mileage;
+      foundProject.notes = req.body.notes || foundProject.notes;
+
+      foundProject.save(function (err) {
+        if(err) {
+          console.error('ERROR!');
+          res.sendStatus(500);
+        }else {
+          res.sendStatus(200);
+        }
+      });
+    }
+  }); // end findOne
+}); // end of PUT Router
 
 //ability to delete project
 router.delete('/:id', function(req, res) {

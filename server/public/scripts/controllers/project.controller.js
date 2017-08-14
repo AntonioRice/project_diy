@@ -14,4 +14,13 @@ function($http, $location, VehicleService, ProjectService, UserService) {
 
   pc.projectService.getProject();
 
+  pc.toggleUpdateProject = function(newProject){
+    console.log("clicked");
+    pc.editProject = newProject;
+    console.log(newProject);
+    console.log(newProject);
+  }
+  pc.cancelUpdate = function(){
+    pc.editProject = undefined;
+  }
 }]); //end of ProjectController

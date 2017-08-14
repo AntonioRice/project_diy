@@ -1,15 +1,17 @@
-myApp.factory('ProjectService', function($http, $location){
+myApp.factory('ProjectService', function($http, $location, $window){
   console.log('ProjectService Loaded');
 
   var userPackage = {};
   var newProject = {};
   var selectedVehicle = {};
+  var editProject = {};
 
 
   return {
     userPackage : userPackage,
     newProject : newProject,
     selectedVehicle: selectedVehicle,
+    editProject : editProject,
 
     //get project
     getProject : function(){
@@ -29,6 +31,16 @@ myApp.factory('ProjectService', function($http, $location){
         console.log('project added', response);
       });
 
+    },
+
+    // updating project
+    updatingProject : function(id){
+      console.log(id);
+      $http.put('/project/' + id, editProject)
+      .then(function(response){
+        console.log('project updated', id);
+      });
+      $window.location.reload();
     },
 
     //delete project
