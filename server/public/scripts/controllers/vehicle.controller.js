@@ -14,6 +14,16 @@ function($http, $location, VehicleService, ProjectService, UserService) {
   //appending vehicles to dom upon pageload
   vc.vehicleService.getVehicle();
 
+  vc.updateVehicle = function(newVehicle){
+    console.log("clicked");
+    vc.editVehicle = newVehicle;
+    console.log(newVehicle);
+    console.log(newVehicle._id);
+  }
+  vc.cancelUpdate = function(){
+    vc.editVehicle = undefined;
+  }
+
 //this is being called in garage.html with (item._id //which is the vehicle id)
 
   // vc.gotoProjectsFor = function(selectedVehicleId) {

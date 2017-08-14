@@ -1,12 +1,12 @@
 <body layout="row">
 
-  <md-content class="md-padding" layout-xs="column" layout="row">
+  <md-content class="md-padding" layout-xs="column" layout="row" ng-if="!vc.editVehicle">
       <div ng-repeat="item in vc.userPackage.vehicle" class="md-card-image">
         <md-card flex="33" >
           <md-card-content>
 
           <md-card-title-text>
-            <span class="md-headline">{{item.name}}</span>
+            <span class="md-headline">{{item.name}}</span >
           </md-card-title-text>
 
             <p>Year: {{item.year}}</p>
@@ -14,9 +14,9 @@
             <p>Model: {{item.model}}</p>
             <p>Body Style: {{item.body_style}}</p>
             <p>Mileage: {{item.mileage}}</p>
-            
-            <md-button  ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</md-button>
-            <md-button  ng-click="vc.vehicleService.updateVehicle(item._id)">Edit</md-button>
+
+            <md-button ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</md-button>
+            <md-button ng-click="vc.updateVehicle(item)">Edit</md-button>
             <md-button ng-click="vc.vehicleService.gotoProjectsFor(item._id)">Projects</md-button>
 
           </md-card-content>
@@ -30,3 +30,40 @@
   <a href="#add_vehicle">Add Vehicle</a>
   <a href="#user">Home</a>
 </div>
+
+<!-- edit form -->
+<md-content layout-align="space-around" ng-if="vc.editVehicle">
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
+    <md-card-content>
+      <form ng-model="vc.editVehicle">
+        <md-input-container>
+          <input type="text" placeholder="Nick Name" ng-model="vc.vehicleService.editVehicle.name"/>
+          {{vc.editVehicle.name}}
+        </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Year" ng-model="vc.vehicleService.editVehicle.year" />
+          {{vc.editVehicle.year}}
+        </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Make" ng-model="vc.vehicleService.editVehicle.make" />
+          {{vc.editVehicle.make}}
+        </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Model" ng-model="vc.vehicleService.editVehicle.model" />
+          {{vc.editVehicle.model}}
+        </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Body Style" ng-model="vc.vehicleService.editVehicle.body_style" />
+          {{vc.editVehicle.body_style}}
+        </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Mileage" ng-model="vc.vehicleService.editVehicle.mileage" />
+          {{vc.editVehicle.mileage}}
+        </md-input-container>
+        <md-button class="btn btn-primary" ng-click="vc.vehicleService.updatingVehicle(vc.editVehicle._id)">
+          Update Vehicle</md-button>
+        <md-button ng-click="vc.cancelUpdate()">Cancel</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+</md-content>

@@ -3,11 +3,12 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
 
   var userPackage = {};
   var newVehicle = {};
+  var editVehicle = {};
 
   return {
     userPackage : userPackage,
     newVehicle : newVehicle,
-
+    editVehicle : editVehicle,
     //ability to get vehicle
 
     getVehicle : function(){
@@ -36,7 +37,7 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
       $window.location.reload();
 
     },
-    
+
     gotoProjectsFor : function(selectedVehicleId) {
       ProjectService.selectedVehicle.id = selectedVehicleId;
       console.log("ID FOR SELECTED CAR: ", selectedVehicleId);
@@ -45,12 +46,21 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
     },
 
   //update vehicle information
-    updateVehicle : function(id){
-      $http.put('/vehicle/' + id)
+    updatingVehicle : function(id){
+      console.log(id);
+      $http.put('/vehicle/' + id, editVehicle)
       .then(function(response){
       console.log('updated', id);
       });
-    }
+      $window.location.reload();
+    },
+
+
+    // vc.updateVehicle = function(newVehicle){
+    //   console.log("clicked");
+    //   vc.editVehicle = newVehicle;
+    //   console.log(newVehicle);
+    // }
   }; //end of return
 
 }); //end of factory
