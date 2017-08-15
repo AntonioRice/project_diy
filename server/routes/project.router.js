@@ -57,6 +57,7 @@ router.put('/:id', function(req, res){
       foundProject.part_number = req.body.part_number || foundProject.part_number;
       foundProject.mileage = req.body.mileage || foundProject.mileage;
       foundProject.notes = req.body.notes || foundProject.notes;
+      foundProject.shop = req.body.shop || foundProject.shop;
 
       foundProject.save(function (err) {
         if(err) {

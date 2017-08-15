@@ -30,6 +30,7 @@ myApp.factory('ProjectService', function($http, $location, $window){
         $location.path('/projects');
         console.log('project added', response);
       });
+      $window.location.reload();
 
     },
 

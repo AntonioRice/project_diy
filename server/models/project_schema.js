@@ -11,7 +11,8 @@ var projectSchema = new Schema({
   part_brand: {type: String},
   part_number: {type: Number},
   mileage: {type: Number},
-  notes: {type: String}
+  notes: {type: String},
+  shop: {type: String}
 });
 
 // export the model

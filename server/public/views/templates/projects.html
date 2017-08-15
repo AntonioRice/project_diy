@@ -2,22 +2,22 @@
 
 <body layout="row">
 
-  <md-content class="md-padding" layout="row" ng-if="!pc.editProject">
+  <md-content class="md-padding" layout-xs="column" layout="row" ng-if="!pc.editProject">
     <div ng-repeat="item in pc.userPackage.project">
-
-      <md-card flex="flex" flex-gt-md="50">
+      <md-card flex="33">
         <md-card-content>
 
           <md-card-title-text>
             <span class="md-headline">{{item.type}}</span>
           </md-card-title-text>
 
-          <p>Date: {{item.date | date}}</p>
-          <p>Task: {{item.task}}</p>
-          <p>Part Brand: {{item.part_brand}}</p>
-          <p>Part Number: {{item.part_number}}</p>
-          <p>Mileage: {{item.mileage}}</p>
-          <p>Notes: {{item.notes}}</p>
+          <p><span class="md-subhead">Date: </span> {{item.date | date}}</p>
+          <p><span class="md-subhead">Task: </span> {{item.task}}</p>
+          <p><span class="md-subhead">Part Brand: </span> {{item.part_brand}}</p>
+          <p><span class="md-subhead">Part #: </span> {{item.part_number}}</p>
+          <p><span class="md-subhead">Mileage: </span> {{item.mileage}}</p>
+          <p><span class="md-subhead">Notes: </span> {{item.notes}}</p>
+          <p><span class="md-subhead">Shop: </span> {{item.shop}}</p>
 
           <div layout="row">
             <md-button class="button md-raised md-warn" ng-click="pc.projectService.deleteProject(item._id)">Delete</md-button>
@@ -40,7 +40,7 @@
     <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
       <md-card-content>
 
-        <form ng-model="pc.projectService.editProject">
+        <form ng-model="pc.editProject">
           <div layout="row">
 
             <md-radio-group layout="row" ng-model="pc.projectService.editProject.type">
@@ -69,6 +69,11 @@
           <md-input-container>
             <input type="text" placeholder="Current Mileage" ng-model="pc.projectService.editProject.mileage" />
             {{pc.editProject.mileage}}
+          </md-input-container>
+
+          <md-input-container ng-if="pc.projectService.editProject.type == 'Shop' ">
+            <input type="text" placeholder="Shop Name" ng-model="pc.projectService.editProject.shop" />
+            {{pc.editProject.shop}}
           </md-input-container>
 
           <md-input-container>

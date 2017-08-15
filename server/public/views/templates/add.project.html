@@ -6,7 +6,7 @@
         <div layout="row">
 
           <md-radio-group layout="row" ng-model="pc.projectService.newProject.type">
-            <md-radio-button value="DIY" class="md-primary">DIY </md-radio-button>
+            <md-radio-button value="DIY" class="md-primary"> DIY </md-radio-button>
             <md-radio-button value="Shop"> Shop </md-radio-button>
           </md-radio-group>
 
@@ -26,6 +26,10 @@
 
         <md-input-container>
           <input type="text" placeholder="Current Mileage" ng-model="pc.projectService.newProject.mileage" />
+        </md-input-container>
+
+        <md-input-container ng-if="pc.projectService.newProject.type == 'Shop' ">
+          <input type="text" placeholder="Shop Name" ng-model="pc.projectService.newProject.shop" />
         </md-input-container>
 
         <md-input-container>
