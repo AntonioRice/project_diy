@@ -35,10 +35,12 @@
         <md-input-container>
           <input type="text" placeholder="Notes" ng-model="pc.projectService.newProject.notes" md-maxlength ="250"/>
         </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Due Mileage" ng-model="pc.projectService.newProject.dueMileage" />
+        </md-input-container>
 
         <md-button class="button md-raised" ng-click="pc.projectService.addProject()">Add Project</md-button>
-        <md-button class="button md-raised" ng-click="pc.gotoGarage()">Garage</md-button>
-
+        <md-button class="button md-raised" ng-click="pc.gotoGarage()">Cancel</md-button>
 
       </form>
 

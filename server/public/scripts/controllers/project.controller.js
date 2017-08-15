@@ -3,6 +3,9 @@ function($http, $location, VehicleService, ProjectService, UserService) {
   console.log('ProjectController created');
 
   var pc = this;
+  var serviceDueIn;
+
+  pc.inputMileage;
 
   pc.userService = UserService;
 
@@ -14,6 +17,8 @@ function($http, $location, VehicleService, ProjectService, UserService) {
 
   pc.projectService.getProject();
 
+  // console.log(pc.projectService.selectedVehicle.name);
+
   pc.toggleUpdateProject = function(newProject){
     console.log("clicked");
     pc.editProject = newProject;
@@ -24,10 +29,33 @@ function($http, $location, VehicleService, ProjectService, UserService) {
     pc.editProject = undefined;
   }
 
-  pc.gotoAddProjectFrom = function(){
+  pc.gotoAddProjectForm = function(){
     $location.path('/add_project');
   }
   pc.gotoGarage = function(){
     $location.path('/garage');
   }
+
+  //variable inside of add_project that acts as a due date/mileage (add to schema)
+  //add input field for inputMileage
+  //add button to run function
+  //function then takes inputMileage, and subtracts it from dueMileage
+  // sweet alert, service due in xxx miles.
+
+    pc.calculateService = function(data){
+      serviceDueIn = data.dueMileage - pc.inputMileage;
+      console.log(pc.inputMileage);
+      console.log(data.mileage);
+      console.log(serviceDueIn);
+      if (pc.inputMileage > data.dueMileage) {
+        swal("Service Past: " + serviceDueIn + " miles", "Due: "+ data.dueMileage);
+      }else {
+        swal("Service Due in: " + serviceDueIn + " miles", "Due: "+ data.dueMileage);
+      }
+
+    }
+
+
+
+
 }]); //end of ProjectController

@@ -18,7 +18,7 @@
 
             <md-button class="md-raised md-warn" ng-click="vc.vehicleService.deleteVehicle(item._id)">X</md-button>
             <md-button class="md-raised" ng-click="vc.toggleUpdateVehicle(item)">Edit</md-button>
-            <md-button class="md-raised" ng-click="vc.vehicleService.gotoProjectsFor(item._id)">P</md-button>
+            <md-button class="md-raised" ng-click="vc.vehicleService.gotoProjectsFor(item._id , item.name)">P</md-button>
 
           </md-card-content>
         </md-card>
@@ -67,7 +67,7 @@
           Update Vehicle</md-button>
         <md-button class="button md-raised" ng-click="vc.cancelUpdate()">Cancel</md-button>
       </form>
-      
+
     </md-card-content>
   </md-card>
 </md-content>

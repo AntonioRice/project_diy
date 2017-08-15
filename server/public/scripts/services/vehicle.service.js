@@ -38,9 +38,11 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
 
     },
 
-    gotoProjectsFor : function(selectedVehicleId) {
+    gotoProjectsFor : function(selectedVehicleId, selectedVehicleName) {
       ProjectService.selectedVehicle.id = selectedVehicleId;
+      ProjectService.selectedVehicle.name = selectedVehicleName;
       console.log("ID FOR SELECTED CAR: ", selectedVehicleId);
+      console.log("Name FOR SELECTED CAR: ", selectedVehicleName);
       //being redirected to the project page, when button is clicked.
       $location.path('/projects');
     },
@@ -55,12 +57,6 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
       $window.location.reload();
     },
 
-
-    // vc.updateVehicle = function(newVehicle){
-    //   console.log("clicked");
-    //   vc.editVehicle = newVehicle;
-    //   console.log(newVehicle);
-    // }
   }; //end of return
 
 }); //end of factory

@@ -58,6 +58,7 @@ router.put('/:id', function(req, res){
       foundProject.mileage = req.body.mileage || foundProject.mileage;
       foundProject.notes = req.body.notes || foundProject.notes;
       foundProject.shop = req.body.shop || foundProject.shop;
+      foundProject.dueMileage = req.body.dueMileage || foundProject.dueMileage;
 
       foundProject.save(function (err) {
         if(err) {
