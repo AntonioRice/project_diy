@@ -14,6 +14,13 @@ function($http, $location, VehicleService, ProjectService, UserService) {
   //appending vehicles to dom upon pageload
   vc.vehicleService.getVehicle();
 
+  vc.client = filestack.init('ACi1b2g3QwqxdEHwqeJMCz');
+  vc.showPicker = function() {
+          vc.client.pick({
+          }).then(function(result) {
+              console.log(JSON.stringify(result.filesUploaded))
+          });
+      }
 
   vc.toggleUpdateVehicle = function(newVehicle){
     console.log("clicked");
@@ -29,6 +36,9 @@ function($http, $location, VehicleService, ProjectService, UserService) {
   }
   vc.logout = function(){
     vc.userService.logout();
+  }
+  vc.gotoGarage = function(){
+    $location.path('/garage');
   }
 
 //this is being called in garage.html with (item._id //which is the vehicle id)

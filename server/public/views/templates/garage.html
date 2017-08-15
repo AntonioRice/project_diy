@@ -9,16 +9,17 @@
           <md-card-title-text>
             <span class="md-headline">{{item.name}}</span >
           </md-card-title-text>
-
+          
+            <img ng-src="{{item.img}}" class="md-card-image" alt="Washed Out">
             <p><span class="md-subhead">Year:</span> {{item.year}}</p>
             <p><span class="md-subhead">Make:</span> {{item.make}}</p>
             <p><span class="md-subhead">Model:</span> {{item.model}}</p>
             <p><span class="md-subhead">Body Style:</span> {{item.body_style}}</p>
             <p><span class="md-subhead">Mileage:</span> {{item.mileage}}</p>
 
-            <md-button class="md-raised md-warn" ng-click="vc.vehicleService.deleteVehicle(item._id)">X</md-button>
+            <!-- <md-button class="md-raised md-warn" ng-click="vc.vehicleService.deleteVehicle(item._id)">Delete</md-button> -->
             <md-button class="md-raised" ng-click="vc.toggleUpdateVehicle(item)">Edit</md-button>
-            <md-button class="md-raised" ng-click="vc.vehicleService.gotoProjectsFor(item._id , item.name)">P</md-button>
+            <md-button class="md-raised" ng-click="vc.vehicleService.gotoProjectsFor(item._id , item.name)">Projects</md-button>
 
           </md-card-content>
         </md-card>
@@ -66,6 +67,8 @@
         <md-button class="button md-raised" ng-click="vc.vehicleService.updatingVehicle(vc.editVehicle._id)">
           Update Vehicle</md-button>
         <md-button class="button md-raised" ng-click="vc.cancelUpdate()">Cancel</md-button>
+        <md-button class="md-raised md-warn" ng-click="vc.vehicleService.deleteVehicle(vc.editVehicle._id)">Delete vehicle</md-button>
+
       </form>
 
     </md-card-content>

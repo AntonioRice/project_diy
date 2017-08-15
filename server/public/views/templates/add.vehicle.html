@@ -21,8 +21,17 @@
         <md-input-container>
           <input type="text" placeholder="Mileage" ng-model="vc.vehicleService.newVehicle.mileage" />
         </md-input-container>
-        <md-button class="btn btn-primary" ng-click="vc.vehicleService.addVehicle()">Add Vehicle</md-button>
-        <a href="#garage">Garage</a>
+
+        <md-input-container>
+          <input class="button md-raised" type="button" value="Upload Image" ng-click="vc.showPicker()"
+          ng-model="vc.vehicleService.newVehicle.img"/>
+        </md-input-container>
+
+        <div layout="row">
+          <md-button class="button md-raised" ng-click="vc.vehicleService.addVehicle()">Add Vehicle</md-button>
+          <md-button class="button md-raised" ng-click="vc.gotoGarage()">Garage</md-button>
+        </div>
+
       </form>
     </md-card-content>
   </md-card>

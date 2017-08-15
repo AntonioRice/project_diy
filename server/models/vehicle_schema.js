@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 // create the Schema
 var vehicleSchema = new Schema({
+  img:{},
   name:{type: String},
   identifier: {type: String}, // user._id
   username: {type: String}, // user.username //not good

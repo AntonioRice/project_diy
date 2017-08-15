@@ -16,8 +16,7 @@ function($http, $location, VehicleService, ProjectService, UserService) {
   pc.userPackage = ProjectService.userPackage;
 
   pc.projectService.getProject();
-
-  // console.log(pc.projectService.selectedVehicle.name);
+  
 
   pc.toggleUpdateProject = function(newProject){
     console.log("clicked");
