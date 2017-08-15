@@ -66,6 +66,7 @@ router.get('/', function(req, res){
           foundVehicle.model = req.body.model || foundVehicle.model;
           foundVehicle.body_style = req.body.body_style || foundVehicle.body_style;
           foundVehicle.mileage = req.body.mileage || foundVehicle.mileage;
+          foundVehicle.img = req.body.img || foundVehicle.img;
 
           foundVehicle.save(function (err) {
             if(err) {
