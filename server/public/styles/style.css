@@ -1,12 +1,16 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-size: 14px;
+  font-family: 'SIMPLIFICA';
+  font-size: 17px;
   /*background-image: url(http://iliketowastemytime.com/sites/default/files/bmw_secret_garage43.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;*/
+}
+@@font-face {
+  font-family: 'SIMPLIFICA';
+  src: url('/styles/SIMPLIFICA/SIMPLIFICA.Typeface.ttf');
 }
 
 .instructions .container h1 {

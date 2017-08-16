@@ -1,8 +1,10 @@
-<md-content layout-align="space-around" layout-padding="layout-padding">
-  <md-card flex="flex" flex-gt-sm="55" flex-gt-md="30">
-    <md-card-content>
+<md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
 
+  <h1 class="lead">New Service Record</h1>
+    <md-card-content>
       <form>
+
         <div layout="row">
 
           <md-radio-group layout="row" ng-model="pc.projectService.newProject.type">
@@ -39,11 +41,13 @@
           <input type="text" placeholder="Due Mileage" ng-model="pc.projectService.newProject.dueMileage" />
         </md-input-container>
 
+        <div layout="row">
         <md-button class="button md-raised" ng-click="pc.projectService.addProject()">Add Project</md-button>
         <md-button class="button md-raised" ng-click="pc.gotoGarage()">Cancel</md-button>
-
+        <div>
+          
       </form>
+    </md-card-content>
 
-    </md-content>
   </md-card>
-</md-card-content>
+</md-content>

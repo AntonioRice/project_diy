@@ -34,21 +34,21 @@
 
         </md-card-content>
       </md-card>
+      <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
     </div>
-  </md-content>
 
+  </md-content>
 </body>
 
-<md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
+
 <!-- <md-button class="button md-raised" ng-click="pc.gotoGarage()">Garage</md-button> -->
 
 <!-- edit project form -->
 <body>
-  <md-content layout-align="space-around" ng-if="pc.editProject">
+    <md-content layout="row" layout-align="space-around" layout-padding="layout-padding" ng-if="pc.editProject">
+      <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
 
-    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
       <md-card-content>
-
         <form ng-model="pc.editProject">
           <div layout="row">
 
@@ -103,5 +103,6 @@
           </form>
         </md-card-content>
       </md-card>
+
     </md-content>
 </body>

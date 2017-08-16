@@ -1,9 +1,8 @@
 <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
-
   <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
-    <md-card-content>
 
-      <h1 class="lead">Login</h1>
+    <md-card-content>
+      <h1 class="lead">LOGIN</h1>
       <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
 
         <form ng-submit="lc.login()" >
@@ -15,13 +14,12 @@
               <input type="password" ng-model="lc.user.password" placeholder="Password"/>
             </md-input-container>
             <div>
-              <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-              <a href="#register">Register</a>
+              <input class="md-button md-raised" type="submit" name="submit" value="Log In" />
+              <a class="md-button md-raised" href="#register">Register</a>
             </div>
           </div>
         </form>
-
       </md-card-content>
+      
     </md-card>
-
   </md-content>
