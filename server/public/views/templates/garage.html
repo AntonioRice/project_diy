@@ -1,82 +1,100 @@
 <div ng-include="'views/partials/nav.html'"></div>
-  <div layout="row"  ng-if="!vc.editVehicle">
-  <div class="btn">
-    <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button>
-  </div>
-  <md-content class="md-padding" layout-xs="column" layout="row">
-    <div ng-repeat="item in vc.userPackage.vehicle" class="md-card-image">
-      <md-card flex="33">
-        <md-card-content>
 
-          <img ng-src="{{item.img}}" height="150px" width="210px" class="md-card-image" alt=" ">
-          <br>
+<body ng-if="!vc.editVehicle" layout-padding>
+  <section layout="row" layout="column" layout-align="center center" >
+    <div layout-align="start center">
+      <h1> Welcome to your garage</h1>
+      <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button>
+    </div>
+  </section>
 
-          <md-card-title-text>
-            <span class="md-headline">{{item.name}}</span >
-            </md-card-title-text>
+  <div layout="row" ng-if="!vc.editVehicle" flex>
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
 
-            <p><span class="md-subhead">Year:</span> {{item.year}}</p>
-            <p><span class="md-subhead">Make:</span> {{item.make}}</p>
-            <p><span class="md-subhead">Model:</span> {{item.model}}</p>
-            <p><span class="md-subhead">Body Style:</span> {{item.body_style}}</p>
-            <p><span class="md-subhead">Mileage:</span> {{item.mileage}}</p>
+      <div ng-repeat="item in vc.userPackage.vehicle">
+        <md-card flex="33" layout-wrap style="width: 350px;">
+          <md-card-content>
+            <!-- "../styles/default-car.png" -->
 
-            <md-button class="md-raised" ng-click="vc.toggleUpdateVehicle(item)">Edit</md-button>
-            <md-button class="md-raised" ng-click="vc.vehicleService.gotoProjectsFor(item._id , item.name)">Projects</md-button>
+            <img ng-src="{{item.img}}" height="200px" width="310px" class="md-card-image">
+            <br>
+            <md-card-title-text>
+              <span class="md-headline">{{item.name}}</span >
+              </md-card-title-text>
 
-          </md-card-content>
-        </md-card>
-      </div>
-    </md-content>
-  </div>
+              <p><span class="md-subhead">Year:</span> {{item.year}}</p>
+              <p><span class="md-subhead">Make:</span> {{item.make}}</p>
+              <p><span class="md-subhead">Model:</span> {{item.model}}</p>
+              <p><span class="md-subhead">Body Style:</span> {{item.body_style}}</p>
+              <p><span class="md-subhead">Mileage:</span> {{item.mileage}}</p>
 
+              <md-card-actions layout="row" layout-align="center center">
+                <md-button class="button md-raised" ng-click="vc.toggleUpdateVehicle(item)">Edit</md-button>
+                <md-button class="button md-raised" ng-click="vc.vehicleService.gotoProjectsFor(item._id , item.name)">Projects</md-button>
+              </md-card-actions>
 
-  <!-- edit form -->
-  <div  ng-if="vc.editVehicle">
+            </md-card-content>
+          </md-card>
+        </div>
+        <!-- <div layout="column">
+          <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button>
+        </div> -->
 
-    <md-content layout-align="space-around">
-      <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
-        <md-card-content>
-
-          <form ng-model="vc.editVehicle">
-            <md-input-container>
-              <input type="text" placeholder="Nick Name" ng-model="vc.vehicleService.editVehicle.name"/>
-              {{vc.editVehicle.name}}
-            </md-input-container>
-            <md-input-container>
-              <input type="text" placeholder="Year" ng-model="vc.vehicleService.editVehicle.year" />
-              {{vc.editVehicle.year}}
-            </md-input-container>
-            <md-input-container>
-              <input type="text" placeholder="Make" ng-model="vc.vehicleService.editVehicle.make" />
-              {{vc.editVehicle.make}}
-            </md-input-container>
-            <md-input-container>
-              <input type="text" placeholder="Model" ng-model="vc.vehicleService.editVehicle.model" />
-              {{vc.editVehicle.model}}
-            </md-input-container>
-            <md-input-container>
-              <input type="text" placeholder="Body Style" ng-model="vc.vehicleService.editVehicle.body_style" />
-              {{vc.editVehicle.body_style}}
-            </md-input-container>
-            <md-input-container>
-              <input type="text" placeholder="Mileage" ng-model="vc.vehicleService.editVehicle.mileage" />
-              {{vc.editVehicle.mileage}}
-            </md-input-container>
-            <md-input-container>
-              <input aria-label="upload" type="button" value="                          "
-              placeholder="Upload Image"class="button md-raised" ng-model="vc.vehicleService.editVehicle.img"
-              ng-click="vc.showPicker()"/>
-            </md-input-container>
-
-            <md-button class="button md-raised" ng-click="vc.vehicleService.updatingVehicle(vc.editVehicle._id)">
-              Update Vehicle</md-button>
-              <md-button class="button md-raised" ng-click="vc.cancelUpdate()">Cancel</md-button>
-              <md-button class="button md-raised md-warn" ng-click="vc.vehicleService.deleteVehicle(vc.editVehicle._id)">Delete vehicle</md-button>
-            </form>
-
-          </md-card-content>
-        </md-card>
       </md-content>
 
     </div>
+
+    <!-- edit form -->
+
+    <div ng-if="vc.editVehicle" >
+
+      <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
+        <md-card flex="flex" flex-gt-sm="70" flex-gt-md="30">
+          <md-card-content>
+            <h1>{{vc.editVehicle.name}}</h1>
+            <form ng-model="vc.editVehicle">
+              <md-input-container>
+                <input type="text" placeholder="Nick Name" ng-model="vc.vehicleService.editVehicle.name"/>
+                {{vc.editVehicle.name}}
+              </md-input-container>
+              <md-input-container>
+                <input type="text" placeholder="Year" ng-model="vc.vehicleService.editVehicle.year" />
+                {{vc.editVehicle.year}}
+              </md-input-container>
+              <md-input-container>
+                <input type="text" placeholder="Make" ng-model="vc.vehicleService.editVehicle.make" />
+                {{vc.editVehicle.make}}
+              </md-input-container>
+              <md-input-container>
+                <input type="text" placeholder="Model" ng-model="vc.vehicleService.editVehicle.model" />
+                {{vc.editVehicle.model}}
+              </md-input-container>
+              <md-input-container>
+                <input type="text" placeholder="Body Style" ng-model="vc.vehicleService.editVehicle.body_style" />
+                {{vc.editVehicle.body_style}}
+              </md-input-container>
+              <md-input-container>
+                <input type="text" placeholder="Mileage" ng-model="vc.vehicleService.editVehicle.mileage" />
+                {{vc.editVehicle.mileage}}
+              </md-input-container>
+              <md-input-container>
+                <input aria-label="upload" type="button" value="                          "
+                placeholder="Upload Image"class="button md-raised" ng-model="vc.vehicleService.editVehicle.img"
+                ng-click="vc.showPicker()"/>
+              </md-input-container>
+
+              <div layout="row">
+                <md-button class="button md-raised" ng-click="vc.vehicleService.updatingVehicle(vc.editVehicle._id)">
+                  Update Vehicle</md-button>
+                  <md-button class="button md-raised md-warn" ng-click="vc.vehicleService.deleteVehicle(vc.editVehicle._id)"></md-button>
+                  <md-button class="button md-raised" md-colors="{color: 'red'}" ng-click="vc.cancelUpdate()">Cancel</md-button>
+                </div>
+              </form>
+
+            </md-card-content>
+          </md-card>
+        </md-content>
+
+      </div>
+
+    </body>

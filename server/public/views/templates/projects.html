@@ -1,10 +1,19 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
-<body layout="row">
-  <h1>{{pc.projectService.selectedVehicle.name}}</h1>
-  <md-content class="md-padding" layout-xs="column" layout="row" ng-if="!pc.editProject">
+<body ng-if="!pc.editProject">
+
+  <section layout="row" layout-md="column" layout-align="end center" layout-wrap>
+    <div layout="row" layout-align="start center" flex>
+      <h1 class="carname">{{pc.projectService.selectedVehicle.name}}</h1>
+      <span flex></span>
+    </div>
+    <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()" padding>Add Project</md-button>
+  </section>
+
+  <md-content class="md-padding" layout-xs="column" layout="row" ayout-wrap ng-if="!pc.editProject">
+
     <div ng-repeat="item in pc.userPackage.project">
-      <md-card flex="33">
+      <md-card layout-wrap style="width: 350px; height: 600px">
         <md-card-content>
 
           <md-card-title-text>
@@ -18,38 +27,36 @@
           <p><span class="md-subhead">Mileage: </span> {{item.mileage}}</p>
           <p><span class="md-subhead">Notes: </span> {{item.notes}}</p>
           <p ng-if="item.shop"><span class="md-subhead">Shop: </span> {{item.shop}}</p>
-
+<br>
           <div layout="row">
-            <md-button class="button md-raised md-warn" ng-click="pc.projectService.deleteProject(item._id)"
-            >Delete</md-button>
             <md-button class="button md-raised" ng-click="pc.toggleUpdateProject(item)">Edit</md-button>
           </div>
-          <div layout="row">
-            <!-- service due calculator -->
+
+          <md-card-actions layout="row" layout-align="end center">
             <md-input-container>
               <input type="text" placeholder="Current Mileage" ng-model="pc.inputMileage" />
             </md-input-container>
             <md-button class="md-raised" ng-click="pc.calculateService(item)"> CALC </md-button>
-          </div>
-
+          </md-card-actions>
         </md-card-content>
       </md-card>
-      <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
     </div>
-
   </md-content>
-</body>
+
 
 
 <!-- <md-button class="button md-raised" ng-click="pc.gotoGarage()">Garage</md-button> -->
 
 <!-- edit project form -->
-<body>
-    <md-content layout="row" layout-align="space-around" layout-padding="layout-padding" ng-if="pc.editProject">
-      <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
+<div ng-if="pc.editProject">
+
+
+  <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
+    <md-card flex="flex" flex-gt-sm="70" flex-gt-md="30">
 
       <md-card-content>
         <form ng-model="pc.editProject">
+
           <div layout="row">
 
             <md-radio-group layout="row" ng-model="pc.projectService.editProject.type">
@@ -88,21 +95,25 @@
 
           <md-input-container>
             <input type="text" placeholder="Notes" ng-model="pc.projectService.editProject.notes"
-             md-maxlength ="250"/>
+            md-maxlength ="250"/>
             {{pc.editProject.notes}}
           </md-input-container>
 
           <md-input-container>
             <input type="text" placeholder="Due Mileage" ng-model="pc.projectService.editProject.dueMileage" />
           </md-input-container>
-
+<div layout="row">
           <md-button class="button md-raised" ng-click="pc.projectService.updatingProject(pc.editProject._id)">
-            Update Project</md-button>
-            <md-button class="button md-raised" ng-click="pc.cancelUpdate()">Cancel</md-button>
+            Update Service</md-button>
+            <md-button class="button md-raised md-warn" ng-click="pc.projectService.deleteProject(pc.editProject._id)">
+              Delete Service</md-button>
+              <md-button class="button md-raised" ng-click="pc.cancelUpdate()">Cancel</md-button>
+</div>
+            </form>
+          </md-card-content>
+        </md-card>
 
-          </form>
-        </md-card-content>
-      </md-card>
+      </md-content>
+      </div>
 
-    </md-content>
 </body>

@@ -2,15 +2,11 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'SIMPLIFICA';
-  font-size: 17px;
+  font-size: 30px;
   /*background-image: url(http://iliketowastemytime.com/sites/default/files/bmw_secret_garage43.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;*/
-}
-@@font-face {
-  font-family: 'SIMPLIFICA';
-  src: url('/styles/SIMPLIFICA/SIMPLIFICA.Typeface.ttf');
 }
 
 .instructions .container h1 {
@@ -21,7 +17,7 @@ body, html {
 .instructions {
   background-color: #333333;
   color: #DDDDDD;
-  padding: 15px;
+  padding: 2px;
 }
 
 #entryForm {
@@ -57,7 +53,7 @@ body, html {
 }
 
 .navbar {
-  background-color: #333333;
+  background-color: #555555;
   width: 100%;
   border-radius: 0px;
 }
@@ -85,4 +81,13 @@ li a {
 li a:hover {
   text-decoration: underline;
   color: #eee;
+}
+.carname{
+  text-transform: uppercase;
+}
+.button:hover{
+color: green;
+}
+span{
+  font-size: 100px;
 }

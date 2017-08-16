@@ -1,5 +1,5 @@
-myApp.controller('VehicleController', ['$http', '$location', 'VehicleService','ProjectService', 'UserService',
-function($http, $location, VehicleService, ProjectService, UserService) {
+myApp.controller('VehicleController', ['$http', '$location','$window', 'VehicleService','ProjectService', 'UserService',
+function($http, $location, $window, VehicleService, ProjectService, UserService) {
   console.log('VehicleController created');
 
   var vc = this;
@@ -21,7 +21,7 @@ function($http, $location, VehicleService, ProjectService, UserService) {
         vc.vehicleService.newVehicle.img = result.filesUploaded[0].url;
         console.log(JSON.stringify(result.filesUploaded));
         console.log(vc.vehicleService.newVehicle.img);
-
+        swal("Image Successfully Uploaded");
       });
   }
 
@@ -43,6 +43,11 @@ function($http, $location, VehicleService, ProjectService, UserService) {
   vc.gotoGarage = function(){
     $location.path('/garage');
   }
+  vc.cancelVehicle = function(){
+    $window.location.reload();
+    $location.path('/garage');
+  }
+
 
 //this is being called in garage.html with (item._id //which is the vehicle id)
 

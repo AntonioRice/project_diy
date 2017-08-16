@@ -1,6 +1,6 @@
 <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
-  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
-    <h1 class="lead"> New Vehicle Registration</h1>
+  <md-card flex="flex" flex-gt-sm="70" flex-gt-md="30">
+    <h1 class="lead" layout-alight="center center"> New Vehicle Registration</h1>
 
     <md-card-content>
       <form>
@@ -32,7 +32,7 @@
 
         <div layout="row">
           <md-button class="button md-raised" ng-click="vc.vehicleService.addVehicle()">Add Vehicle</md-button>
-          <md-button class="button md-raised" ng-click="vc.gotoGarage()">Garage</md-button>
+          <md-button class="button md-raised" md-colors="{color: 'red'}" ng-click="vc.cancelVehicle()">Cancel</md-button>
         </div>
       </form>
     </md-card-content>

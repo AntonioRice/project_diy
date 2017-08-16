@@ -1,7 +1,9 @@
-<md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
-  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="30">
+<div ng-include="'views/partials/nav.html'"></div>
 
-  <h1 class="lead">New Service Record</h1>
+<md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
+  <md-card flex="flex" flex-gt-sm="60" flex-gt-md="30">
+
+  <h1 class="lead">New Project Record</h1>
     <md-card-content>
       <form>
 
@@ -45,7 +47,7 @@
         <md-button class="button md-raised" ng-click="pc.projectService.addProject()">Add Project</md-button>
         <md-button class="button md-raised" ng-click="pc.gotoGarage()">Cancel</md-button>
         <div>
-          
+
       </form>
     </md-card-content>
 
