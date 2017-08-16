@@ -86,8 +86,12 @@ li a:hover {
   text-transform: uppercase;
 }
 .button:hover{
-color: green;
+color: red;
+font-size: 20px;
 }
-span{
-  font-size: 100px;
+.md-headline{
+  font-size: 50px;
+}
+#userName{
+  color: red;
 }

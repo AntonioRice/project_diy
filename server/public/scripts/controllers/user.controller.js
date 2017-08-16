@@ -4,4 +4,5 @@ myApp.controller('UserController', function(UserService) {
   uc.userService = UserService;
   uc.userPackage = UserService.userPackage;
 
+
 });

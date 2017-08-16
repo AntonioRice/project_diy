@@ -13,6 +13,7 @@ function($http, $location, $window, VehicleService, ProjectService, UserService)
   vc.userPackage = VehicleService.userPackage;
   //appending vehicles to dom upon pageload
   vc.vehicleService.getVehicle();
+  vc.userService.getuser();
 
   vc.client = filestack.init('ACi1b2g3QwqxdEHwqeJMCz');
   vc.showPicker = function() {
@@ -48,6 +49,9 @@ function($http, $location, $window, VehicleService, ProjectService, UserService)
     $location.path('/garage');
   }
 
+  vc.stretchGoals = function(){
+    swal("HA! WOULD BE NICE RIGHT??");
+  }
 
 //this is being called in garage.html with (item._id //which is the vehicle id)
 

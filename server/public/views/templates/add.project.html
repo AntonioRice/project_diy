@@ -3,12 +3,14 @@
 <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
   <md-card flex="flex" flex-gt-sm="60" flex-gt-md="30">
 
-  <h1 class="lead">New Project Record</h1>
+    <section layout="row" layout-md="column" layout-align="end center" layout-wrap>
+      <div layout="row" layout-align="start center" flex>
+        <h1> New Project Record</h1>
+    </section>
     <md-card-content>
       <form>
 
         <div layout="row">
-
           <md-radio-group layout="row" ng-model="pc.projectService.newProject.type">
             <md-radio-button value="DIY" class="md-primary"> DIY </md-radio-button>
             <md-radio-button value="Shop"> Shop </md-radio-button>
