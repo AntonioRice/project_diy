@@ -27,12 +27,19 @@ function($http, $location, ProjectService, VehicleService, UserService) {
   pc.cancelUpdate = function(){
     pc.editProject = undefined;
   }
-
   pc.gotoAddProjectForm = function(){
     $location.path('/add_project');
   }
   pc.gotoGarage = function(){
     $location.path('/garage');
+
+  }
+  pc.cancelAdd = function(){
+    $location.path('/projects');
+  }
+
+  pc.cancelNewProject = function(){
+    $location.path('/project');
   }
 
   //variable inside of add_project that acts as a due date/mileage (add to schema)

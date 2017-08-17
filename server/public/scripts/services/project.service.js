@@ -31,7 +31,6 @@ myApp.factory('ProjectService', function($http, $location, $window){
         console.log('project added', response);
       });
       $window.location.reload();
-
     },
 
     // updating project
@@ -41,7 +40,9 @@ myApp.factory('ProjectService', function($http, $location, $window){
       .then(function(response){
         console.log('project updated', id);
       });
-      $window.location.reload();
+      $location.path('/garage');
+      $window.location.reload('/garage');
+
     },
 
     //delete project
@@ -50,8 +51,13 @@ myApp.factory('ProjectService', function($http, $location, $window){
       .then(function(response){
         console.log('project deleted', id);
       });
-      $window.location.reload();
-    }
+      $location.path('/garage');
+      $window.location.reload('/garage');
+  
+    },
+
   }; //end of return
+
+
 
 }); //end of factory

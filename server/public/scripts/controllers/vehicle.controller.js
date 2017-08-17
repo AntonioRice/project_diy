@@ -35,12 +35,11 @@ function($http, $location, $window, VehicleService, ProjectService, UserService)
   vc.cancelUpdate = function(){
     vc.editVehicle = undefined;
   }
+
   vc.gotoAddVehicleFrom = function(){
     $location.path('/add_vehicle');
   }
-  vc.logout = function(){
-    vc.userService.logout();
-  }
+
   vc.gotoGarage = function(){
     $location.path('/garage');
   }
@@ -51,6 +50,10 @@ function($http, $location, $window, VehicleService, ProjectService, UserService)
 
   vc.stretchGoals = function(){
     swal("HA! WOULD BE NICE RIGHT??");
+  }
+
+  vc.logout = function(){
+    vc.userService.logout();
   }
 
 //this is being called in garage.html with (item._id //which is the vehicle id)

@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var projectSchema = new Schema({
   identifier: {type: String}, // vehicle._id
   username: {type: String}, // user.username - should be user._id
-  type: {type: String},
+  type: {type: String,required: true},
   date: {type: String},
   task: {type: String},
   part_brand: {type: String},

@@ -55,7 +55,7 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
       console.log('updated', id);
       });
       $window.location.reload();
-    },
+    }
 
   }; //end of return
 

@@ -1,11 +1,11 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
 <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
-  <md-card flex="flex" flex-gt-sm="60" flex-gt-md="30">
+  <md-card flex="flex" height="350px" width="600px">
 
     <section layout="row" layout-md="column" layout-align="end center" layout-wrap>
       <div layout="row" layout-align="start center" flex>
-        <h1> New Project Record</h1>
+        <h1><md-icon class="material-icons">build</md-icon> New Project Record</h1>
     </section>
     <md-card-content>
       <form>
@@ -39,15 +39,16 @@
         </md-input-container>
 
         <md-input-container>
-          <input type="text" placeholder="Notes" ng-model="pc.projectService.newProject.notes" md-maxlength ="250"/>
-        </md-input-container>
-        <md-input-container>
-          <input type="text" placeholder="Due Mileage" ng-model="pc.projectService.newProject.dueMileage" />
+          <input type="text" placeholder="Next Due Mileage" ng-model="pc.projectService.newProject.dueMileage" />
         </md-input-container>
 
-        <div layout="row">
+        <md-input-container>
+          <input type="text" placeholder="Notes" ng-model="pc.projectService.newProject.notes" md-maxlength ="250"/>
+        </md-input-container>
+
+        <div layout="row" layout-align="center center">
         <md-button class="button md-raised" ng-click="pc.projectService.addProject()">Add Project</md-button>
-        <md-button class="button md-raised" ng-click="pc.gotoGarage()">Cancel</md-button>
+        <md-button class="button md-raised" ng-click="pc.cancelAdd()">Cancel</md-button>
         <div>
 
       </form>

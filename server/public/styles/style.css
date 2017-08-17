@@ -95,3 +95,15 @@ font-size: 20px;
 #userName{
   color: red;
 }
+section{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+h1 .lead{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.welcomeUser{
+  max-width: 100%;
+  max-height: 56px;
+}

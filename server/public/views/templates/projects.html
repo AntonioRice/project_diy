@@ -1,21 +1,22 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
-<body ng-if="!pc.editProject">
+<body ng-if="!pc.editProject" layout-padding>
 
-  <section layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!pc.editProject">
+  <section class="welcomeUser" layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!pc.editProject">
     <div layout="row" layout-align="start center" flex>
       <h1>{{pc.projectService.selectedVehicle.name}}</h1>
       <span flex></span>
     </div>
-    <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()" padding>Add Project</md-button>
+    <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
   </section>
 
-  <md-content class="md-padding" layout-xs="column" layout="row" ayout-wrap ng-if="!pc.editProject">
+  <div layout="row" ng-if="!pc.editProject" flex>
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
 
     <div ng-repeat="item in pc.userPackage.project">
-      <md-card layout-wrap style="width: 350px; height: 612px">
-        <md-card-content>
+<md-card flex="33" layout-wrap style="width: 350px;">
 
+        <md-card-content>
           <md-card-title-text>
             <span class="md-headline">{{item.type}}</span>
           </md-card-title-text>
@@ -26,23 +27,25 @@
           <p> Part #: {{item.part_number}}</p>
           <p> Mileage: {{item.mileage}}</p>
           <p> Notes: {{item.notes}}</p>
-          <p ng-if="item.shop"><span class="md-subhead">Shop: </span> {{item.shop}}</p>
+          <p ng-if="item.shop">Shop: </span> {{item.shop}}</p>
           <br>
+
           <div layout="row">
             <md-button class="button md-raised" ng-click="pc.toggleUpdateProject(item)">Edit</md-button>
           </div>
+
           <md-card-actions layout="row" layout-align="end center">
             <md-input-container>
               <input type="text" placeholder="Current Mileage" ng-model="pc.inputMileage" />
             </md-input-container>
             <md-button class="button md-raised" ng-click="pc.calculateService(item)">Calculate</md-button>
+
           </md-card-actions>
         </md-card-content>
       </md-card>
     </div>
   </md-content>
-
-
+</div>
 
   <!-- <md-button class="button md-raised" ng-click="pc.gotoGarage()">Garage</md-button> -->
 
@@ -51,9 +54,13 @@
 
 
     <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
-      <md-card flex="flex" flex-gt-sm="70" flex-gt-md="30">
+      <md-card flex="flex" height="350px" width="600px">
 
         <md-card-content>
+          <section layout="row" layout-md="column" layout-align="end center" layout-wrap>
+            <div layout="row" layout-align="start center" flex>
+              <h1>Edit Project</h1>
+          </section>
           <form ng-model="pc.editProject">
 
             <div layout="row">
@@ -102,7 +109,7 @@
               <input type="text" placeholder="Due Mileage" ng-model="pc.projectService.editProject.dueMileage" />
               {{pc.editProject.dueMileage}}
             </md-input-container>
-            <div layout="row">
+            <div layout="row" layout-align="center center">
               <md-button class="button md-raised" ng-click="pc.projectService.updatingProject(pc.editProject._id)">
                 Update Service</md-button>
                 <md-button class="button md-raised" ng-click="pc.projectService.deleteProject(pc.editProject._id)">

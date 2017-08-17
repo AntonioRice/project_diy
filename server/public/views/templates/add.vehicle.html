@@ -1,8 +1,9 @@
 <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
   <md-card flex="flex" flex-gt-sm="70" flex-gt-md="30">
+
     <section layout="row" layout-md="column" layout-align="end center" layout-wrap>
       <div layout="row" layout-align="start center" flex>
-        <h1> New Vehicle Registration</h1>
+        <h1> <md-icon class="material-icons">build</md-icon> New Vehicle Registration </h1>
     </section>
     <md-card-content>
       <form>
@@ -25,14 +26,13 @@
         <md-input-container>
           <input type="text" placeholder="Mileage" ng-model="vc.vehicleService.newVehicle.mileage" />
         </md-input-container>
-
         <md-input-container>
           <input aria-label="upload" type="button" value="                          "
           placeholder="Upload Image"class="button md-raised" ng-model="vc.vehicleService.newVehicle.img"
           ng-click="vc.showPicker()"/>
         </md-input-container>
 
-        <div layout="row">
+        <div layout="row" layout-align="center center">
           <md-button class="button md-raised" ng-click="vc.vehicleService.addVehicle()">Add Vehicle</md-button>
           <md-button class="button md-raised" ng-click="vc.cancelVehicle()">Cancel</md-button>
         </div>
