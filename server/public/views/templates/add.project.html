@@ -43,12 +43,20 @@
         </md-input-container>
 
         <md-input-container>
+          <input type="text" placeholder="Project Cost" ng-model="pc.projectService.newProject.cost" />
+        </md-input-container>
+
+        <md-input-container ng-if="pc.projectService.newProject.type == 'DIY' ">
+          <input type="text" placeholder="Shop Quote" ng-model="pc.projectService.newProject.quote" />
+        </md-input-container>
+
+        <md-input-container>
           <input type="text" placeholder="Notes" ng-model="pc.projectService.newProject.notes" md-maxlength ="250"/>
         </md-input-container>
 
         <div layout="row" layout-align="center center">
         <md-button class="button md-raised" ng-click="pc.projectService.addProject()">Add Project</md-button>
-        <md-button class="button md-raised" ng-click="pc.cancelAdd()">Cancel</md-button>
+        <md-button class="button md-raised" ng-click="pc.projectService.cancelNewProject()">Cancel</md-button>
         <div>
 
       </form>

@@ -30,8 +30,9 @@
           <p> Part Brand: {{item.part_brand}}</p>
           <p> Part #: {{item.part_number}}</p>
           <p> Mileage: {{item.mileage}}</p>
+          <p ng-if:"item.type == 'DIY' "> Project: {{item.cost}}</p>
           <p> Notes: {{item.notes}}</p>
-          <p ng-if="item.shop">Shop: </span> {{item.shop}}</p>
+          <p ng-if="item.shop">Shop: {{item.shop}}</p
           <br>
 
           <div layout="row">
@@ -99,6 +100,16 @@
             <md-input-container>
               <input type="text" placeholder="Current Mileage" ng-model="pc.projectService.editProject.mileage" />
               {{pc.editProject.mileage}}
+            </md-input-container>
+
+            <md-input-container ng-if="pc.projectService.editProject.type == 'DIY' ">
+              <input type="text" placeholder="Project Cost" ng-model="pc.projectService.editProject.cost" />
+              {{pc.editProject.cost}}
+            </md-input-container>
+
+            <md-input-container>
+              <input type="text" placeholder="Shop Quote" ng-model="pc.projectService.editProject.quote" />
+              {{pc.editProject.quote}}
             </md-input-container>
 
             <md-input-container ng-if="pc.projectService.editProject.type == 'Shop' ">

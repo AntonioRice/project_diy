@@ -59,6 +59,8 @@ router.put('/:id', function(req, res){
       foundProject.notes = req.body.notes || foundProject.notes;
       foundProject.shop = req.body.shop || foundProject.shop;
       foundProject.dueMileage = req.body.dueMileage || foundProject.dueMileage;
+      foundProject.cost = req.body.cost || foundProject.cost;
+      foundProject.quote = req.body.quote || foundProject.quote;
 
       foundProject.save(function (err) {
         if(err) {

@@ -1,4 +1,4 @@
-myApp.factory('ProjectService', function($http, $location, $window){
+myApp.factory('ProjectService', function($http, $routeParams, $location, $window){
   console.log('ProjectService Loaded');
 
   var userPackage = {};
@@ -14,10 +14,11 @@ myApp.factory('ProjectService', function($http, $location, $window){
     editProject : editProject,
 
     //get project
-    getProject : function(){
-      $http.get('/project/' + selectedVehicle.id).then(function(response){
+    getProject : function(pathId){
+      $http.get('/project/' + pathId).then(function(response){
         console.log(response.data);
-        userPackage.project = response.data;
+        userPackage.project = response.data;  
+
       });
     },
 
@@ -27,10 +28,10 @@ myApp.factory('ProjectService', function($http, $location, $window){
       // console.log('addProject to vehicle with id', selectedVehicle.id);
       $http.post('/project/' + selectedVehicle.id , newProject)
       .then(function(response){
-        $location.path('/garage');
+        $location.path('/projects/' + selectedVehicle.id);
         console.log('project added', response);
       });
-      $window.location.reload();
+
     },
 
     // updating project
@@ -40,9 +41,8 @@ myApp.factory('ProjectService', function($http, $location, $window){
       .then(function(response){
         console.log('project updated', id);
       });
-      $location.path('/garage');
-      $window.location.reload('/garage');
-
+      // $location.path('/garage');
+      $window.location.reload();
     },
 
     //delete project
@@ -51,10 +51,14 @@ myApp.factory('ProjectService', function($http, $location, $window){
       .then(function(response){
         console.log('project deleted', id);
       });
-      $location.path('/garage');
-      $window.location.reload('/garage');
+      // $location.path('/projects/' + selectedVehicle.id);
+      $window.location.reload();
 
     },
+
+    cancelNewProject : function(){
+      $location.path('/projects/'+ selectedVehicle.id);
+    }
 
   }; //end of return
 

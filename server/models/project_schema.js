@@ -13,7 +13,9 @@ var projectSchema = new Schema({
   mileage: {type: Number},
   notes: {type: String},
   shop: {type: String},
-  dueMileage: {type: Number}
+  dueMileage: {type: Number},
+  cost:{type: Number},
+  quote:{type: Number}
 });
 
 // export the model

@@ -1,5 +1,5 @@
-myApp.controller('ProjectController', ['$http', '$location', 'ProjectService', 'VehicleService', 'UserService',
-function($http, $location, ProjectService, VehicleService, UserService) {
+myApp.controller('ProjectController', ['$http','$routeParams', '$location', 'ProjectService', 'VehicleService', 'UserService',
+function($http, $routeParams, $location, ProjectService, VehicleService, UserService) {
   console.log('ProjectController created');
 
   var pc = this;
@@ -15,7 +15,19 @@ function($http, $location, ProjectService, VehicleService, UserService) {
 
   pc.userPackage = ProjectService.userPackage;
 
-  pc.projectService.getProject();
+
+  console.log(pc.projectService.userPackage);
+  console.log(pc.projectService.userPackage.project);
+
+
+  // console.log(selectedVehicleId);
+  var pathObject = $routeParams;
+
+  var pathId = pathObject.selectedVehicleId;
+  console.log(pathId);
+  console.log(pathObject.selectedVehicleId);
+
+  pc.projectService.getProject(pathId);
 
 
   pc.toggleUpdateProject = function(newProject){
@@ -34,13 +46,13 @@ function($http, $location, ProjectService, VehicleService, UserService) {
     $location.path('/garage');
 
   }
-  pc.cancelAdd = function(){
-    $location.path('/projects');
-  }
+  // pc.cancelAdd = function(){
+  //   $location.path('/projects');
+  // }
 
-  pc.cancelNewProject = function(){
-    $location.path('/project');
-  }
+  // pc.cancelNewProject = function(){
+  //   $location.path('/projects/'+ pathId);
+  // }
 
   //variable inside of add_project that acts as a due date/mileage (add to schema)
   //add input field for inputMileage

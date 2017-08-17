@@ -1,4 +1,4 @@
-myApp.factory('VehicleService', function($http, $location, $window, UserService, ProjectService){
+myApp.factory('VehicleService', function($http, $routeParams, $location, $window, UserService, ProjectService){
   console.log('VehicleService Loaded');
 
   var userPackage = {};
@@ -18,6 +18,7 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
       });
     },
 
+
   //ability to add vehicle to garage
     addVehicle : function(){
       $http.post('/vehicle', newVehicle)
@@ -27,6 +28,15 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
         console.log('vehicle added', response);
         });
     },
+    //update vehicle information
+      updatingVehicle : function(id){
+        console.log(id);
+        $http.put('/vehicle/' + id, editVehicle)
+        .then(function(response){
+        console.log('updated', id);
+        });
+        $window.location.reload();
+      },
 
   //delete vehicle from garage
     deleteVehicle : function(id){
@@ -44,18 +54,10 @@ myApp.factory('VehicleService', function($http, $location, $window, UserService,
       console.log("ID FOR SELECTED CAR: ", selectedVehicleId);
       console.log("Name FOR SELECTED CAR: ", selectedVehicleName);
       //being redirected to the project page, when button is clicked.
-      $location.path('/projects');
-    },
-
-  //update vehicle information
-    updatingVehicle : function(id){
-      console.log(id);
-      $http.put('/vehicle/' + id, editVehicle)
-      .then(function(response){
-      console.log('updated', id);
-      });
-      $window.location.reload();
+      $location.path('/projects/' + selectedVehicleId);
     }
+
+
 
   }; //end of return
 

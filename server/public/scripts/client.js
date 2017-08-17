@@ -2,6 +2,7 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ngMdIcons']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider, $mdAriaProvider) {
+
   $mdAriaProvider.disableWarnings();
   $mdThemingProvider
       .theme('default')
@@ -41,6 +42,7 @@ myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider, $md
       'A400': '#E75753',
       'A700': '#E75753'
     });
+
   $locationProvider.hashPrefix('');
   console.log('myApp -- config')
   $routeProvider
@@ -56,7 +58,7 @@ myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider, $md
       templateUrl: '/views/templates/garage.html',
       controller: 'VehicleController as vc'
     })
-    .when('/projects', {
+    .when('/projects/:selectedVehicleId', {
       templateUrl: '/views/templates/projects.html',
       controller: 'ProjectController as pc'
     })
