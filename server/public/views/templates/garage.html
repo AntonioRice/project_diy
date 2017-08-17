@@ -2,8 +2,9 @@
 
 <body ng-if="!vc.editVehicle" layout-padding>
 
-  <section class="welcomeUser" layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!vc.editVehicle">
-    <div layout="row" layout-align="start center" flex>
+  <section class="welcomeUser" layout="row" layout-md="column" layout-align="center center" layout-wrap ng-if="!vc.editVehicle" style="
+    width: 500px;">
+    <div layout="row" layout-align="center center" flex>
       <h1>Welcome to your Garage, <span id="userName">{{vc.userService.userPackage.userName}}<span> </h1>
       <span flex></span>
     </div>

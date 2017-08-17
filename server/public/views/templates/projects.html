@@ -2,19 +2,23 @@
 
 <body ng-if="!pc.editProject" layout-padding>
 
-  <section class="welcomeUser" layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!pc.editProject">
-    <div layout="row" layout-align="start center" flex>
-      <h1>{{pc.projectService.selectedVehicle.name}}</h1>
-      <span flex></span>
-    </div>
-    <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
-  </section>
+  <section class="welcomeUser" layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!pc.editProject"
+  style="
+  width: 300px;
+  margin-left: center;
+  padding-left: 30px;">
+  <div layout="row" layout-align="center center" flex>
+    <h1>{{pc.projectService.selectedVehicle.name}}</h1>
+    <span flex></span>
+  </div>
+  <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
+</section>
 
-  <div layout="row" ng-if="!pc.editProject" flex>
-    <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
+<div layout="row" ng-if="!pc.editProject" flex>
+  <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
 
     <div ng-repeat="item in pc.userPackage.project">
-<md-card flex="33" layout-wrap style="width: 350px;">
+      <md-card flex="33" layout-wrap style="width: 350px;">
 
         <md-card-content>
           <md-card-title-text>
@@ -35,11 +39,14 @@
           </div>
 
           <md-card-actions layout="row" layout-align="end center">
-            <md-input-container>
-              <input type="text" placeholder="Current Mileage" ng-model="pc.inputMileage" />
-            </md-input-container>
-            <md-button class="button md-raised" ng-click="pc.calculateService(item)">Calculate</md-button>
+            <div ng-if="item.dueMileage">
 
+
+              <md-input-container >
+                <input type="text" placeholder="Current Mileage" ng-model="pc.inputMileage" />
+              </md-input-container>
+              <md-button class="button md-raised" ng-click="pc.calculateService(item)">Calculate</md-button>
+            </div>
           </md-card-actions>
         </md-card-content>
       </md-card>
@@ -47,19 +54,19 @@
   </md-content>
 </div>
 
-  <!-- <md-button class="button md-raised" ng-click="pc.gotoGarage()">Garage</md-button> -->
+<!-- <md-button class="button md-raised" ng-click="pc.gotoGarage()">Garage</md-button> -->
 
-  <!-- edit project form -->
-  <div ng-if="pc.editProject">
+<!-- edit project form -->
+<div ng-if="pc.editProject">
 
 
-    <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
-      <md-card flex="flex" height="350px" width="600px">
+  <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
+    <md-card flex="flex" height="350px" width="600px">
 
-        <md-card-content>
-          <section layout="row" layout-md="column" layout-align="end center" layout-wrap>
-            <div layout="row" layout-align="start center" flex>
-              <h1>Edit Project</h1>
+      <md-card-content>
+        <section layout="row" layout-md="column" layout-align="end center" layout-wrap>
+          <div layout="row" layout-align="start center" flex>
+            <h1>Edit Project</h1>
           </section>
           <form ng-model="pc.editProject">
 

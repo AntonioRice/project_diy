@@ -24,10 +24,10 @@ myApp.factory('ProjectService', function($http, $location, $window){
     //add project
     addProject : function(){
       //selectedVehicleid was set by vehicle controller
-      console.log('addProject to vehicle with id', selectedVehicle.id)
+      // console.log('addProject to vehicle with id', selectedVehicle.id);
       $http.post('/project/' + selectedVehicle.id , newProject)
       .then(function(response){
-        $location.path('/projects');
+        $location.path('/garage');
         console.log('project added', response);
       });
       $window.location.reload();
@@ -53,7 +53,7 @@ myApp.factory('ProjectService', function($http, $location, $window){
       });
       $location.path('/garage');
       $window.location.reload('/garage');
-  
+
     },
 
   }; //end of return

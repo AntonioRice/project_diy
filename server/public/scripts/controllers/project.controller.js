@@ -54,7 +54,7 @@ function($http, $location, ProjectService, VehicleService, UserService) {
       console.log(data.mileage);
       console.log(serviceDueIn);
       if (pc.inputMileage > data.dueMileage) {
-        swal("Service Past: " + serviceDueIn + " miles", "Due: "+ data.dueMileage);
+        swal("Service Past Due: " + serviceDueIn + " miles", "Due: "+ data.dueMileage);
       }else {
         swal("Service Due in: " + serviceDueIn + " miles", "Due: "+ data.dueMileage);
       }
