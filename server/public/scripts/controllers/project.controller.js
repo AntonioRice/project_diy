@@ -15,10 +15,24 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
 
   pc.userPackage = ProjectService.userPackage;
 
+//savings calculations
+  // 
+  // pc.projectService.getProject()
+  // console.log("calculations", pc.userPackage.project[0].cost);
 
-  console.log(pc.projectService.userPackage);
-  console.log(pc.projectService.userPackage.project);
 
+  // console.log(pc.projectService.userPackage.project);
+
+  pc.client = filestack.init('ACi1b2g3QwqxdEHwqeJMCz');
+  pc.showPicker = function() {
+    pc.client.pick({
+      }).then(function(result) {
+        pc.projectService.newProject.img = result.filesUploaded[0].url;
+        console.log(JSON.stringify(result.filesUploaded));
+        console.log(pc.projectService.newProject.img);
+        swal("Image Successfully Uploaded");
+      });
+  }
 
   // console.log(selectedVehicleId);
   var pathObject = $routeParams;

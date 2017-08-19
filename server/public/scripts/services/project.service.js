@@ -17,7 +17,7 @@ myApp.factory('ProjectService', function($http, $routeParams, $location, $window
     getProject : function(pathId){
       $http.get('/project/' + pathId).then(function(response){
         console.log(response.data);
-        userPackage.project = response.data;  
+        userPackage.project = response.data;
 
       });
     },
@@ -30,6 +30,7 @@ myApp.factory('ProjectService', function($http, $routeParams, $location, $window
       .then(function(response){
         $location.path('/projects/' + selectedVehicle.id);
         console.log('project added', response);
+        pc.projectService.newProject = {};
       });
 
     },

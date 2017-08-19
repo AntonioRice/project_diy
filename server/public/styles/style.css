@@ -3,10 +3,12 @@ body, html {
   padding: 0;
   font-family: 'SIMPLIFICA';
   font-size: 30px;
-  /*background-image: url(http://iliketowastemytime.com/sites/default/files/bmw_secret_garage43.jpg);
+  /*background-image: url(https://s-media-cache-ak0.pinimg.com/originals/70/76/ef/7076ef6603cf2ad6b113d164331a2bfb.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;*/
+
+
 }
 
 .instructions .container h1 {
@@ -16,7 +18,7 @@ body, html {
 
 .instructions {
   background-color: #333333;
-  color: #DDDDDD;
+  /*color: #DDDDDD;*/
   padding: 2px;
 }
 
@@ -53,9 +55,11 @@ body, html {
 }
 
 .navbar {
-  background-color: #555555;
+  background-color: darkcyan;
+  height: 100px;
   width: 100%;
   border-radius: 0px;
+
 }
 
 ul {
@@ -80,13 +84,13 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   text-decoration: underline;
-  color: #eee;
+  color: darkcyan;
 }
 .carname{
   text-transform: uppercase;
 }
 .button:hover{
-color: red;
+color: darkcyan;
 font-size: 20px;
 }
 .md-headline{
@@ -95,15 +99,22 @@ font-size: 20px;
 #userName{
   color: red;
 }
-section{
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
+
 h1 .lead{
+
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .welcomeUser{
   max-width: 100%;
   max-height: 56px;
+}
+.buttonSide.md-raised{
+  font-size: 50px;
+}
+md-sidenav, md-content.sideButton{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+md-content{
+  background-color: rgba(0, 0, 0, 0.0);
 }

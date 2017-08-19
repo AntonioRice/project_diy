@@ -2,16 +2,12 @@
 
 <body ng-if="!pc.editProject" layout-padding>
 
-  <section class="welcomeUser" layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!pc.editProject"
-  style="
-  width: 300px;
-  margin-left: center;
-  padding-left: 30px;">
+  <section class="welcomeUser" layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!pc.editProject">
   <div layout="row" layout-align="center center" flex>
-    <h1>{{pc.projectService.selectedVehicle.name}}</h1>
-    <span flex></span>
-  </div>
-  <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
+      <h1>{{pc.projectService.selectedVehicle.name}}</h1>
+      <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
+    <div>
+
 </section>
 
 <div layout="row" ng-if="!pc.editProject" flex>
@@ -21,10 +17,13 @@
       <md-card flex="33" layout-wrap style="width: 350px;">
 
         <md-card-content>
+
           <md-card-title-text>
             <span class="md-headline">{{item.type}}</span>
           </md-card-title-text>
 
+          <img ng-src="{{item.img}}" height="200px" width="290px" class="md-card-image">
+          <br>
           <p> Date: {{item.date | date}}</p>
           <p> Task: {{item.task}}</p>
           <p> Part Brand: {{item.part_brand}}</p>
@@ -41,7 +40,6 @@
 
           <md-card-actions layout="row" layout-align="end center">
             <div ng-if="item.dueMileage">
-
 
               <md-input-container >
                 <input type="text" placeholder="Current Mileage" ng-model="pc.inputMileage" />
@@ -61,7 +59,7 @@
 <div ng-if="pc.editProject">
 
 
-  <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
+  <md-content layout="row" layout-align="space-around" layout-padding>
     <md-card flex="flex" height="350px" width="600px">
 
       <md-card-content>
@@ -121,6 +119,11 @@
               <input type="text" placeholder="Notes" ng-model="pc.projectService.editProject.notes"
               md-maxlength ="250"/>
               {{pc.editProject.notes}}
+            </md-input-container>
+            <md-input-container>
+              <input aria-label="upload" type="button" value="                          "
+              placeholder="Upload Image"class="button md-raised" ng-model="pc.projectService.editProject.img"
+              ng-click="pc.showPicker()"/>
             </md-input-container>
 
             <md-input-container>

@@ -1,7 +1,7 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
 <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
-  <md-card flex="flex" height="350px" width="600px">
+  <md-card  height="350px" width="500px">
 
     <section layout="row" layout-md="column" layout-align="end center" layout-wrap>
       <div layout="row" layout-align="start center" flex>
@@ -48,6 +48,12 @@
 
         <md-input-container ng-if="pc.projectService.newProject.type == 'DIY' ">
           <input type="text" placeholder="Shop Quote" ng-model="pc.projectService.newProject.quote" />
+        </md-input-container>
+        
+        <md-input-container>
+          <input aria-label="upload" type="button" value="                          "
+          placeholder="Upload Image"class="button md-raised" ng-model="pc.projectService.newProject.img"
+          ng-click="pc.showPicker()"/>
         </md-input-container>
 
         <md-input-container>

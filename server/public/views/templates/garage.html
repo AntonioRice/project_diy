@@ -1,18 +1,18 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
 <body ng-if="!vc.editVehicle" layout-padding>
+  <h1>Welcome to your Garage, <span id="userName">{{vc.userService.userPackage.userName}}<span> </h1>
 
-  <section class="welcomeUser" layout="row" layout-md="column" layout-align="center center" layout-wrap ng-if="!vc.editVehicle" style="
-    width: 500px;">
-    <div layout="row" layout-align="center center" flex>
+  <!-- <section class="welcomeUser" layout="center end" layout-wrap ng-if="!vc.editVehicle">
+
       <h1>Welcome to your Garage, <span id="userName">{{vc.userService.userPackage.userName}}<span> </h1>
-      <span flex></span>
-    </div>
-    <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button>
-  </section>
+        <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button>
 
-  <div layout="row" ng-if="!vc.editVehicle" flex>
-    <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
+  </section> -->
+  <!-- <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button> -->
+
+  <div layout="row" ng-if="!vc.editVehicle" flex layout-padding>
+    <md-content layout-xs="column" layout="row" layout-wrap>
 
       <div ng-repeat="item in vc.userPackage.vehicle">
         <md-card flex="33" layout-wrap style="width: 350px;">
@@ -41,6 +41,8 @@
           </md-card>
         </div>
     </md-content>
+
+
   </div>
 
   <!-- edit form -->
@@ -100,5 +102,11 @@
       </md-content>
 
     </div>
+<!-- <footer>
+    <md-toolbar class="md-scroll-shrink" ng-if="!vc.editVehicle" >
+      <div layout="row" layout-align="center center" flex>
 
+      </div>
+    </md-toolbar>
+    </footer> -->
   </body>

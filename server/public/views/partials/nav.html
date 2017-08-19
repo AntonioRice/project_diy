@@ -1,10 +1,51 @@
-
-
-<body ng-app="myApp">
+<body id="navBody" ng-app="myApp">
   <div class="navbar" ng-controller="NavController as nc">
-    <div class="container">
-    <md-button class="button md-raised" ng-click="nc.userService.logout()">Logout</md-button>
-    <md-button class="button md-raised" ng-click="pc.gotoGarage()">Garage</md-button>
-    </div>
+
+      <div layout="row" layout-align="center center" flex>
+        <md-button class="button md-raised" ng-click="nc.openLeftMenu()">
+          Menu
+        </md-button>
+        <h1> Projct DIY: {{vc.userService.userPackage.userName}}</h1>
+      </div>
+
+    <!-- inside of nav -->
+    <md-sidenav md-component-id="left" class="md-sidenav-left">
+
+      <div class="instructions">
+        <div layout="row" layout-align="center center" flex>
+          <h1 class="lead">Project DIY</h1>
+        </div>
+      </div>
+      <md-content class="sideButton">
+        <md-button  style="
+        width: 212px;
+        height: 50px;
+        padding-left: 6px;
+        margin-left: 40px;" class="buttonSide button md-raised" ng-click="nc.userService.logout()">Logout</md-button>
+      </md-content>
+      <md-content class="sideButton">
+        <md-button style="
+        width: 212px;
+        height: 50px;
+        padding-left: 6px;
+        margin-left: 40px;" class="buttonSide button md-raised" ng-click="pc.gotoGarage()">Garage</md-button>
+      </md-content>
+      <md-content class="sideButton">
+        <md-button style="
+        width: 212px;
+        height: 50px;
+        padding-left: 6px;
+        margin-left: 40px;" class="buttonSide button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button>
+      </md-content>
+
+
+      <div layout-padding >
+        <p>Useful Resources</p>
+        <ul>
+          <a href="https://carmanuals2.com/">Car Manuals</a>
+        </ul>
+      </div>
+    </md-sidenav>
+
   </div>
 </body>

@@ -19,9 +19,11 @@ function($http, $location, $window, VehicleService, ProjectService, UserService)
   vc.showPicker = function() {
     vc.client.pick({
       }).then(function(result) {
+
         vc.vehicleService.newVehicle.img = result.filesUploaded[0].url;
+
         console.log(JSON.stringify(result.filesUploaded));
-        console.log(vc.vehicleService.newVehicle.img);
+        // console.log(vc.vehicleService.newVehicle.img);
         swal("Image Successfully Uploaded");
       });
   }
@@ -49,7 +51,7 @@ function($http, $location, $window, VehicleService, ProjectService, UserService)
   }
 
   vc.stretchGoals = function(){
-    swal("HA! WOULD BE NICE RIGHT??");
+    swal("Coming Soon!", "Ability to cycle through photo gallery");
   }
 
   vc.logout = function(){
