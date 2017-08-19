@@ -8,7 +8,7 @@ nc.projectService = ProjectService;
 
 nc.openLeftMenu = function (){
   $mdSidenav('left').toggle();
-  
+
 }
 
 }); //end of nav controller

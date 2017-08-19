@@ -4,6 +4,7 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
 
   var pc = this;
   var serviceDueIn;
+  var serviceDue;
 
   pc.inputMileage;
 
@@ -16,7 +17,7 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
   pc.userPackage = ProjectService.userPackage;
 
 //savings calculations
-  // 
+  //
   // pc.projectService.getProject()
   // console.log("calculations", pc.userPackage.project[0].cost);
 
@@ -74,16 +75,23 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
   //function then takes inputMileage, and subtracts it from dueMileage
   // sweet alert, service due in xxx miles.
 
-    pc.calculateService = function(data){
-      serviceDueIn = data.dueMileage - pc.inputMileage;
-      console.log(pc.inputMileage);
-      console.log(data.mileage);
+    pc.calculateService = function(item, $index){
+
+      console.log(item);
+
+      serviceDue = item.mileage + item.dueMileage;
+      serviceDueIn = serviceDue - pc.inputMileage[$index];
       console.log(serviceDueIn);
-      if (pc.inputMileage > data.dueMileage) {
-        swal("Service Past Due: " + serviceDueIn + " miles", "Due: "+ data.dueMileage);
-      }else {
-        swal("Service Due in: " + serviceDueIn + " miles", "Due: "+ data.dueMileage);
-      }
+
+       if (pc.inputMileage[$index] > serviceDue) {
+
+      swal("Service Past Due: " + serviceDueIn + " miles ", "Due: " + serviceDue);
+    }else if(pc.inputMileage[$index] < item.mileage){
+      swal("Not Possible, Double check your Mileage");
+
+    }else {
+     swal("Service Due in: " + serviceDueIn + " miles", "Due: " + serviceDue);
+     }
 
     }
 

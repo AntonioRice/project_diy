@@ -13,7 +13,7 @@
 <div layout="row" ng-if="!pc.editProject" flex>
   <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
 
-    <div ng-repeat="item in pc.userPackage.project">
+    <div ng-repeat="item in pc.userPackage.project track by $index">
       <md-card flex="33" layout-wrap style="width: 350px;">
 
         <md-card-content>
@@ -41,10 +41,10 @@
           <md-card-actions layout="row" layout-align="end center">
             <div ng-if="item.dueMileage">
 
-              <md-input-container >
-                <input type="text" placeholder="Current Mileage" ng-model="pc.inputMileage" />
+              <md-input-container>
+                <input type="text" placeholder="Current Mileage" ng-model="pc.inputMileage[$index]"/>
               </md-input-container>
-              <md-button class="button md-raised" ng-click="pc.calculateService(item)">Calculate</md-button>
+              <md-button class="button md-raised" ng-click="pc.calculateService(item, $index)">Calculate</md-button>
             </div>
           </md-card-actions>
         </md-card-content>

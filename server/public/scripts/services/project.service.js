@@ -30,7 +30,7 @@ myApp.factory('ProjectService', function($http, $routeParams, $location, $window
       .then(function(response){
         $location.path('/projects/' + selectedVehicle.id);
         console.log('project added', response);
-        pc.projectService.newProject = {};
+        newProject = {};
       });
 
     },
