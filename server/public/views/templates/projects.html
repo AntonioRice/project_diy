@@ -30,7 +30,8 @@
           <p> Part Brand: {{item.part_brand}}</p>
           <p> Part #: {{item.part_number}}</p>
           <p> Mileage: {{item.mileage}}</p>
-          <p ng-if:"item.type == 'DIY' "> Project Cost: {{item.cost}}</p>
+          <p ng-if="item.type == 'DIY' "> Project Cost: {{item.cost}}</p>
+          <p ng-if="item.type == 'Shop' "> Project Cost: {{item.quote}}</p>
           <p ng-if="item.shop">Shop: {{item.shop}}</p>
           <p> Notes: {{item.notes}}</p>
 

@@ -55,6 +55,7 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
     pc.calculateService = function(item, $index){
 
       console.log(item);
+    
 
       serviceDue = item.mileage + item.dueMileage;
       serviceDueIn = serviceDue - pc.inputMileage[$index];
@@ -77,13 +78,14 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
      if(item.quote && item.cost){
        savings = item.quote - item.cost;
        console.log("Savings",savings);
-       swal("You saved: " + savings);
-     }else {
-       swal("Should've done it yourself buddy");
-     }
+       swal("You saved: $" + savings);
+     }else if(!item.quote && !item.cost) {
+       swal("Please update project information");
+     } else  {
+        swal("Should've done it yourself buddy");
 
-   }
-
+      }
+}//end of savings
 
 
 
