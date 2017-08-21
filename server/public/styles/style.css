@@ -3,21 +3,38 @@ body, html {
   padding: 0;
   font-family: 'SIMPLIFICA';
   font-size: 30px;
-  /*background-image: url(https://s-media-cache-ak0.pinimg.com/originals/70/76/ef/7076ef6603cf2ad6b113d164331a2bfb.jpg);
-  background-repeat: no-repeat;
+
+  /*background-image: url(https://s-media-cache-ak0.pinimg.com/originals/70/76/ef/7076ef6603cf2ad6b113d164331a2bfb.jpg);*/
+  background-image: url(https://static1.squarespace.com/static/509d6570e4b001bf110d3212/t/58f63e4a579fb3776b2b7534/1492532874458/33639199312_57179baeee_k.jpg?format=1500w);
   background-position: center;
-  background-size: cover;*/
+  background-size: auto;
 
 
 }
+body.md-default-theme, body, html.md-default-theme, html {
+    color: rgb(245,245,245);
+    /*background-color: rgb(250,250,250);*/
 
+}
+
+
+md-card.md-default-theme, md-card {
+    color: rgba(0,0,0,0.87);
+    background-color: rgba(255, 255, 255, 0.96);
+    /*border-radius: 2px;*/
+}
+md-toolbar{
+  font-size: 30px;
+  
+
+}
 .instructions .container h1 {
   font-size: 32px;
   font-weight: 600;
 }
 
 .instructions {
-  background-color: #333333;
+  /*background-color: #333333;*/
   /*color: #DDDDDD;*/
   padding: 2px;
 }
@@ -84,13 +101,13 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   text-decoration: underline;
-  color: darkcyan;
+  color: red;
 }
 .carname{
   text-transform: uppercase;
 }
 .button:hover{
-color: darkcyan;
+color: red;
 font-size: 20px;
 }
 .md-headline{

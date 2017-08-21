@@ -2,16 +2,17 @@
 
 <body ng-if="!pc.editProject" layout-padding>
 
-  <section class="welcomeUser" layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!pc.editProject">
+  <section class="welcomeUser" layout="row" layout-md="column" layout-align="end center" layout-wrap ng-if="!pc.editProject" style="margin-top: 40px;">
   <div layout="row" layout-align="center center" flex>
       <h1>{{pc.projectService.selectedVehicle.name}}</h1>
       <md-button class="button md-raised" ng-click="pc.gotoAddProjectForm()">Add Project</md-button>
-    <div>
+    </div>
 
 </section>
 
 <div layout="row" ng-if="!pc.editProject" flex>
-  <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
+  <!-- <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap style="margin-top: 20px;"> -->
+  <md-content layout="row" layout-wrap style="margin-top: 20px;width: 1125px;margin-left: 0px;left: 60px;">
 
     <div ng-repeat="item in pc.userPackage.project track by $index">
       <md-card flex="33" layout-wrap style="width: 350px;">
@@ -29,10 +30,9 @@
           <p> Part Brand: {{item.part_brand}}</p>
           <p> Part #: {{item.part_number}}</p>
           <p> Mileage: {{item.mileage}}</p>
-          <p ng-if:"item.type == 'DIY' "> Project: {{item.cost}}</p>
+          <p ng-if:"item.type == 'DIY' "> Project Cost: {{item.cost}}</p>
+          <p ng-if="item.shop">Shop: {{item.shop}}</p>
           <p> Notes: {{item.notes}}</p>
-          <p ng-if="item.shop">Shop: {{item.shop}}</p
-          <br>
 
           <div layout="row">
             <md-button class="button md-raised" ng-click="pc.toggleUpdateProject(item)">Edit</md-button>
@@ -59,7 +59,7 @@
 <div ng-if="pc.editProject">
 
 
-  <md-content layout="row" layout-align="space-around" layout-padding>
+  <md-content layout="row" layout-align="space-around" layout-padding style="margin-top: 40px;">
     <md-card flex="flex" height="350px" width="600px">
 
       <md-card-content>
@@ -99,6 +99,10 @@
               <input type="text" placeholder="Current Mileage" ng-model="pc.projectService.editProject.mileage" />
               {{pc.editProject.mileage}}
             </md-input-container>
+            <md-input-container>
+              <input type="text" placeholder="Due Mileage" ng-model="pc.projectService.editProject.dueMileage" />
+              {{pc.editProject.dueMileage}}
+            </md-input-container>
 
             <md-input-container ng-if="pc.projectService.editProject.type == 'DIY' ">
               <input type="text" placeholder="Project Cost" ng-model="pc.projectService.editProject.cost" />
@@ -126,10 +130,7 @@
               ng-click="pc.showPicker()"/>
             </md-input-container>
 
-            <md-input-container>
-              <input type="text" placeholder="Due Mileage" ng-model="pc.projectService.editProject.dueMileage" />
-              {{pc.editProject.dueMileage}}
-            </md-input-container>
+
             <div layout="row" layout-align="center center">
               <md-button class="button md-raised" ng-click="pc.projectService.updatingProject(pc.editProject._id)">
                 Update Service</md-button>

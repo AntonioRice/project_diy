@@ -18,9 +18,11 @@ myApp.factory('ProjectService', function($http, $routeParams, $location, $window
       $http.get('/project/' + pathId).then(function(response){
         console.log(response.data);
         userPackage.project = response.data;
+        // console.log(userPackage.project[0]._id);
 
       });
     },
+
 
     //add project
     addProject : function(){

@@ -1,4 +1,5 @@
-myApp.controller('ProjectController', ['$http','$routeParams', '$location', 'ProjectService', 'VehicleService', 'UserService',
+myApp.controller('ProjectController', ['$http','$routeParams', '$location', 'ProjectService',
+'VehicleService', 'UserService',
 function($http, $routeParams, $location, ProjectService, VehicleService, UserService) {
   console.log('ProjectController created');
 
@@ -16,13 +17,12 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
 
   pc.userPackage = ProjectService.userPackage;
 
-//savings calculations
-  //
-  // pc.projectService.getProject()
-  // console.log("calculations", pc.userPackage.project[0].cost);
+  var pathObject = $routeParams;
+  var pathId = pathObject.selectedVehicleId;
+  console.log(pathId);
+  console.log(pathObject.selectedVehicleId);
+  pc.projectService.getProject(pathId);
 
-
-  // console.log(pc.projectService.userPackage.project);
 
   pc.client = filestack.init('ACi1b2g3QwqxdEHwqeJMCz');
   pc.showPicker = function() {
@@ -34,17 +34,6 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
         swal("Image Successfully Uploaded");
       });
   }
-
-  // console.log(selectedVehicleId);
-  var pathObject = $routeParams;
-
-  var pathId = pathObject.selectedVehicleId;
-  console.log(pathId);
-  console.log(pathObject.selectedVehicleId);
-
-  pc.projectService.getProject(pathId);
-
-
   pc.toggleUpdateProject = function(newProject){
     console.log("clicked");
     pc.editProject = newProject;
@@ -61,19 +50,7 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
     $location.path('/garage');
 
   }
-  // pc.cancelAdd = function(){
-  //   $location.path('/projects');
-  // }
 
-  // pc.cancelNewProject = function(){
-  //   $location.path('/projects/'+ pathId);
-  // }
-
-  //variable inside of add_project that acts as a due date/mileage (add to schema)
-  //add input field for inputMileage
-  //add button to run function
-  //function then takes inputMileage, and subtracts it from dueMileage
-  // sweet alert, service due in xxx miles.
 
     pc.calculateService = function(item, $index){
 
@@ -93,7 +70,21 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
      swal("Service Due in: " + serviceDueIn + " miles", "Due: " + serviceDue);
      }
 
-    }
+   } //end of pc.calculateService
+
+   // savings calculations
+   pc.calcSavings = function(item, $index){
+
+    console.log(item);
+
+    savings = item.quote - item.cost;
+    console.log(savings);
+
+    swal(savings);
+
+   }
+
+
 
 
 

@@ -1,8 +1,6 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
-<body ng-if="!vc.editVehicle" layout-padding>
-  <h1>Welcome to your Garage, <span id="userName">{{vc.userService.userPackage.userName}}<span> </h1>
-
+<body ng-if="!vc.editVehicle" layout-padding layout="column">
   <!-- <section class="welcomeUser" layout="center end" layout-wrap ng-if="!vc.editVehicle">
 
       <h1>Welcome to your Garage, <span id="userName">{{vc.userService.userPackage.userName}}<span> </h1>
@@ -11,8 +9,8 @@
   </section> -->
   <!-- <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button> -->
 
-  <div layout="row" ng-if="!vc.editVehicle" flex layout-padding>
-    <md-content layout-xs="column" layout="row" layout-wrap>
+  <div layout="column" ng-if="!vc.editVehicle" layout-padding flex>
+    <md-content layout="row" layout-wrap style="margin-top: 20px;width: 1125px;margin-left: 0px;left: 60px;">
 
       <div ng-repeat="item in vc.userPackage.vehicle">
         <md-card flex="33" layout-wrap style="width: 350px;">
@@ -49,7 +47,7 @@
 
   <div ng-if="vc.editVehicle">
 
-    <md-content layout="row" layout-align="space-around" layout-padding="layout-padding">
+    <md-content layout="row" layout-align="space-around" layout-padding="layout-padding" style="margin-top: 25px;">
     <md-card flex="flex" flex-gt-sm="70" flex-gt-md="30">
 
         <md-card-content>

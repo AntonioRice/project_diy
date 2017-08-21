@@ -1,12 +1,17 @@
-<body id="navBody" ng-app="myApp">
-  <div class="navbar" ng-controller="NavController as nc">
+<body ng-app="myApp" layout="column">
 
-      <div layout="row" layout-align="center center" flex>
-        <md-button class="button md-raised" ng-click="nc.openLeftMenu()">
-          Menu
-        </md-button>
-        <h1> Projct DIY </h1>
+  <div ng-controller="NavController as nc" layout="row">
+
+    <md-toolbar class="md-tall accent">
+      <md-content>
+      <div layout="column" layout-align="end start" style="width: 100px;">
+        <md-button class="button md-raised" ng-click="nc.openLeftMenu()"> Menu </md-button>
       </div>
+      <div layout="row" layout-align="center center" flex>
+        <h1 style=" margin-top: 0px; margin-bottom: 0px; "> Project DIY </h1>
+      </div>
+      <md-content>
+    </md-toolbar>
 
     <!-- inside of nav -->
     <md-sidenav md-component-id="left" class="md-sidenav-left">
@@ -41,12 +46,16 @@
 
 
       <md-card>
+        <md-card-content>
         <p>Useful Resources</p>
         <ul>
           <a href="https://carmanuals2.com/">Car Manuals</a>
         </ul>
+        <md-card-content>
       </md-card>
     </md-sidenav>
+
+
 
   </div>
 </body>
