@@ -73,14 +73,14 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
    } //end of pc.calculateService
 
    // savings calculations
-   pc.calcSavings = function(item, $index){
-
-    console.log(item);
-
-    savings = item.quote - item.cost;
-    console.log(savings);
-
-    swal(savings);
+   pc.calcSavings = function(item){
+     if(item.quote && item.cost){
+       savings = item.quote - item.cost;
+       console.log("Savings",savings);
+       swal("You saved: " + savings);
+     }else {
+       swal("Should've done it yourself buddy");
+     }
 
    }
 
