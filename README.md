@@ -1,8 +1,23 @@
 # Name of Project
+Project DIY
+
+Project DIY is a full stack web application that logs the user's DIY projects
+related to their cars. The users have the ability to add vehicles to their homepage,
+which acts a garage. Then they can track each car's diy or shop services.
+
 
 One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
 
 ## Built With
+
+MongoDB
+Mongoose
+Express
+AngularJS
+Node.js
+Filestack
+Sweet Alerts
+
 
 List technologies and frameworks here
 

@@ -55,8 +55,7 @@ function($http, $routeParams, $location, ProjectService, VehicleService, UserSer
     pc.calculateService = function(item, $index){
 
       console.log(item);
-    
-
+      
       serviceDue = item.mileage + item.dueMileage;
       serviceDueIn = serviceDue - pc.inputMileage[$index];
       console.log(serviceDueIn);
