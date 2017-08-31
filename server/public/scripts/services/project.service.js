@@ -8,6 +8,7 @@ myApp.factory('ProjectService', function($http, $routeParams, $location, $window
 
 
   return {
+    
     userPackage : userPackage,
     newProject : newProject,
     selectedVehicle: selectedVehicle,

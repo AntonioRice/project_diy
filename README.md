@@ -25,6 +25,9 @@ List technologies and frameworks here
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+-Fork the repository over to your Github.
+-Clone the repository and save it to your desired folder
+
 ### Prerequisites
 
 Link to software that is required to install the app (e.g. node).
@@ -35,16 +38,16 @@ Link to software that is required to install the app (e.g. node).
 
 ### Installing
 
-Steps to get the development environment running.
+run npm install
 
-## Screen Shot
+<!-- ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+Include one or two screen shots of your project here (optional). Remove if unused. -->
 
-## Documentation
+<!-- ## Documentation
 
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
-
+Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused. -->
+<!--
 ### Completed Features
 
 High level list of items completed.
@@ -60,13 +63,13 @@ Features that you would like to add at some point in the future.
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Add additional notes about how to deploy this on a live system -->
 
 ## Authors
 
 * Antonio Rice
 
 
-## Acknowledgments
+<!-- ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* Hat tip to anyone who's code was used -->

@@ -1,9 +1,10 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
 <body ng-if="!vc.editVehicle" layout-padding layout="column">
+  <h1 style="margin-top: 2px; margin-bottom: 2px;">Welcome to your Garage, <span id="userName">{{vc.userService.userPackage.userName}}<span> </h1>
+
   <!-- <section class="welcomeUser" layout="center end" layout-wrap ng-if="!vc.editVehicle">
 
-      <h1>Welcome to your Garage, <span id="userName">{{vc.userService.userPackage.userName}}<span> </h1>
         <md-button class="button md-raised" ng-click="vc.gotoAddVehicleFrom()">Add Vehicle</md-button>
 
   </section> -->
