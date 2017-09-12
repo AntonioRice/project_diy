@@ -16,7 +16,7 @@ var registerRouter = require('./routes/register.router');
 var projectRouter = require('./routes/project.router');
 var vehicleRouter = require('./routes/vehicle.router');
 
-var port = process.env.PORT || 6000;
+var port = process.env.PORT || 5001;
 
 // Body parser middleware
 app.use(bodyParser.json());

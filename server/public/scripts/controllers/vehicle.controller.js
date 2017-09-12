@@ -15,13 +15,12 @@ function($http, $location, $window, VehicleService, ProjectService, UserService)
   vc.vehicleService.getVehicle();
   vc.userService.getuser();
 
+
   vc.client = filestack.init('ACi1b2g3QwqxdEHwqeJMCz');
   vc.showPicker = function() {
     vc.client.pick({
       }).then(function(result) {
-
         vc.vehicleService.newVehicle.img = result.filesUploaded[0].url;
-
         console.log(JSON.stringify(result.filesUploaded));
         // console.log(vc.vehicleService.newVehicle.img);
         swal("Image Successfully Uploaded");
