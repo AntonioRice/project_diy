@@ -47,11 +47,10 @@ to run this application.
 
 run npm install
 
-
 ## Screen Shot
 
-![Image of topic selection page](views/screenshots/login_view.jpeg)
-![Image of topic selection page](views/screenshots/garage_view.jpeg)
+![Image of topic selection page](public/views/screenshots/login_view.jpeg)
+![Image of topic selection page](screenshots/garage_view.jpeg)
 ![Image of topic selection page](views/screenshots/side_menu_view.jpeg)
 ![Image of topic selection page](views/screenshots/new_vehicle_view.jpeg)
 ![Image of topic selection page](views/screenshots/projects_view.jpeg)
