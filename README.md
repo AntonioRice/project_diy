@@ -49,12 +49,12 @@ run npm install
 
 ## Screen Shot
 
-![Image of topic selection page](public/views/screenshots/login_view.jpeg)
+![Image of topic selection page](screenshots/login_view.jpeg)
 ![Image of topic selection page](screenshots/garage_view.jpeg)
-![Image of topic selection page](views/screenshots/side_menu_view.jpeg)
-![Image of topic selection page](views/screenshots/new_vehicle_view.jpeg)
-![Image of topic selection page](views/screenshots/projects_view.jpeg)
-![Image of topic selection page](views/screenshots/new_project_view.jpeg)
+![Image of topic selection page](screenshots/side_menu_view.jpeg)
+![Image of topic selection page](screenshots/new_vehicle_view.jpeg)
+![Image of topic selection page](screenshots/projects_view.jpeg)
+![Image of topic selection page](screenshots/new_project_view.jpeg)
 
 ## Documentation
 
