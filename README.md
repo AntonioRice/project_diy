@@ -48,12 +48,12 @@ to run this application.
 
 ## Screen Shot
 
- <img src="screenshots/login_view.jpeg" height="90px" width ="100px">
- <img src="screenshots/garage_view.jpeg" height="90px" width ="100px">
- <img src="screenshots/side_menu_view.jpeg" height="90px" width ="100px">
- <img src="screenshots/new_vehicle_view.jpeg" height="90px" width ="100px">
- <img src="screenshots/projects_view.jpeg" height="90px" width ="100px">
- <img src="screenshots/new_project_view.jpeg" height="90px" width ="100px">
+ <img src="screenshots/login_view.jpeg" height="290px" width ="300px">
+ <img src="screenshots/garage_view.jpeg" height="290px" width ="300px">
+ <img src="screenshots/side_menu_view.jpeg" height="290px" width ="300px">
+ <img src="screenshots/new_vehicle_view.jpeg" height="290px" width ="300px">
+ <img src="screenshots/projects_view.jpeg" height="290px" width ="300px">
+ <img src="screenshots/new_project_view.jpeg" height="290px" width ="300px">
 
 ## Documentation
 
