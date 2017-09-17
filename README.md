@@ -48,12 +48,12 @@ to run this application.
 
 ## Screen Shot
 
-![Image of topic selection page](screenshots/login_view.jpeg | 100x100) 
-![Image of topic selection page](screenshots/garage_view.jpeg | 100x100)
-![Image of topic selection page](screenshots/side_menu_view.jpeg | 100x100)
-![Image of topic selection page](screenshots/new_vehicle_view.jpeg | 100x100)
-![Image of topic selection page](screenshots/projects_view.jpeg | 100x100)
-![Image of topic selection page](screenshots/new_project_view.jpeg | 100x100)
+![Image of topic selection page](<img src="screenshots/login_view.jpeg">)
+![Image of topic selection page](screenshots/garage_view.jpeg)
+![Image of topic selection page](screenshots/side_menu_view.jpeg)
+![Image of topic selection page](screenshots/new_vehicle_view.jpeg)
+![Image of topic selection page](screenshots/projects_view.jpeg)
+![Image of topic selection page](screenshots/new_project_view.jpeg)
 
 ## Documentation
 
