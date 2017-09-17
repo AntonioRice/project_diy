@@ -1,13 +1,14 @@
 # Name of Project
 Project DIY
 
-Project DIY is a full stack web application that logs the user's DIY projects
-related to their cars. The users have the ability to add vehicles to their homepage,
-which acts a garage. Then they can track each car's diy or shop services.
+Project DIY is a full stack web application that logs the user's Vehicle DIY projects.
+The users have the ability to add vehicles to their homepage, which acts a garage.
+Then they can track each vehicle's DIY or Shop services. They can also record
+savings, mileage, and check if services are due.
 
 Heroku Link:
 
-https://warm-chamber-59476.herokuapp.com/#/home
+https://projectdiy.herokuapp.com
 
 ## Built With
 
@@ -35,8 +36,6 @@ run `npm install`
 This is a MEAN - Stack web application. MongoDB, Express, AngularJS, and Node.js are all required
 to run this application.
 
-- [npm](https://www.npmjs.com/)
-
 - [MongoDB](https://www.mongodb.com/)
 - [AngularJS](https://angularjs.org/)
 - [Express](https://expressjs.com/)
@@ -45,16 +44,16 @@ to run this application.
 
 ### Installing
 
-make sure mongo
+`npm install`
 
 ## Screen Shot
 
-![Image of topic selection page](screenshots/login_view.jpeg)
-![Image of topic selection page](screenshots/garage_view.jpeg)
-![Image of topic selection page](screenshots/side_menu_view.jpeg)
-![Image of topic selection page](screenshots/new_vehicle_view.jpeg)
-![Image of topic selection page](screenshots/projects_view.jpeg)
-![Image of topic selection page](screenshots/new_project_view.jpeg)
+![Image of topic selection page](screenshots/login_view.jpeg){:height="100px" width="100px"}
+![Image of topic selection page](screenshots/garage_view.jpeg){:height="100px" width="100px"}
+![Image of topic selection page](screenshots/side_menu_view.jpeg){:height="100px" width="100px"}
+![Image of topic selection page](screenshots/new_vehicle_view.jpeg){:height="100px" width="100px"}
+![Image of topic selection page](screenshots/projects_view.jpeg){:height="100px" width="100px"}
+![Image of topic selection page](screenshots/new_project_view.jpeg){:height="100px" width="100px"}
 
 ## Documentation
 
